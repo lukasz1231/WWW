@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moja Kolekcja Win</title>
+    <link rel="stylesheet" href="css.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Moja Kolekcja Win</h1>
+        <form id="wineForm">
+            <div>
+                <label for="name">Nazwa Wina:</label>
+                <input type="text" id="name" required>
+            </div>
+            <div>
+                <label for="type">Rodzaj Wina:</label>
+                <input type="text" id="type" required>
+            </div>
+            <div>
+                <label for="year">Rok Produkcji:</label>
+                <input type="number" id="year" required>
+            </div>
+            <div>
+                <label for="rating">Ocena:</label>
+                <input type="number" id="rating" min="0" max="10" required>
+            </div>
+            <div>
+                <label for="notes">Notatki Degustacyjne:</label>
+                <textarea id="notes" rows="4"></textarea>
+            </div>
+            <button type="submit">Dodaj Wino</button>
+        </form>
+        <input type="text" id="search" placeholder="Szukaj według nazwy, rodzaju lub roku">
+        <table id="wineTable">
+            <thead>
+                <tr>
+                    <th onclick="sortTable(0)">Nazwa</th>
+                    <th onclick="sortTable(1)">Rodzaj</th>
+                    <th onclick="sortTable(2)">Rok</th>
+                    <th onclick="sortTable(3)">Ocena</th>
+                    <th>Notatki</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+    <script src="js.js"></script>
+</body>
+</html>
