@@ -16,11 +16,17 @@
             </div>
             <div>
                 <label for="type">Rodzaj Wina:</label>
-                <input type="text" id="type" required>
+                <select id="type" required>
+                    <option value="">Wybierz...</option>
+                    <option value="Słodkie">Słodkie</option>
+                    <option value="Półsłodkie">Półsłodkie</option>
+                    <option value="Półwytrawne">Półwytrawne</option>
+                    <option value="Wytrawne">Wytrawne</option>
+                </select>
             </div>
             <div>
                 <label for="year">Rok Produkcji:</label>
-                <input type="number" id="year" required>
+                <input type="number" id="year" value="1900" required>
             </div>
             <div>
                 <label for="rating">Ocena:</label>
