@@ -1,85 +1,89 @@
-document.addEventListener("DOMContentLoaded", () => {
-    const wineForm = document.getElementById("wineForm");
-    const wineTableBody = document.querySelector("#wineTable tbody");
-    const searchInput = document.getElementById("search");
+document.addEventListener('DOMContentLoaded', () => {
+    const trailers = [
+        {
+            name: "Wynajem Naczepy Chłodni Schmitz 2021r.",
+            year: 2021,
+            price: 4450,
+            image: "trailer1.jpg"
+        },
+        {
+            name: "Ładowarka Teleskopowa JCB, MANITOU",
+            year: 2021,
+            price: 7500,
+            image: "trailer2.jpg"
+        }
+    ];
 
-    let wines = [];
+    const trailersContainer = document.getElementById('trailers');
+    const priceRange = document.getElementById('priceRange');
+    const priceValue = document.getElementById('priceValue');
+    const addTrailerForm = document.getElementById('addTrailerForm');
 
-    wineForm.addEventListener("submit", (e) => {
-        e.preventDefault();
+    function renderTrailers() {
+        trailersContainer.innerHTML = '';
+        trailers.forEach((trailer, index) => {
+            if (trailer.price <= priceRange.value) {
+                const trailerDiv = document.createElement('div');
+                trailerDiv.classList.add('trailer');
 
-        const name = document.getElementById("name").value;
-        const type = document.getElementById("type").value;
-        const year = document.getElementById("year").value;
-        const rating = document.getElementById("rating").value;
-        const notes = document.getElementById("notes").value;
+                trailerDiv.innerHTML = `
+                    <img src="${trailer.image}" alt="${trailer.name}">
+                    <div class="trailer-details">
+                        <h3>${trailer.name}</h3>
+                        <p>Rok: ${trailer.year}</p>
+                        <p>Cena: ${trailer.price} zł + VAT</p>
+                    </div>
+                    <div class="trailer-actions">
+                        <button onclick="editTrailer(${index})">Edytuj</button>
+                        <button onclick="deleteTrailer(${index})">Usuń</button>
+                    </div>
+                `;
 
-        const wine = { name, type, year, rating, notes };
-        wines.push(wine);
-        displayWines(wines);
-
-        wineForm.reset();
-    });
-
-    searchInput.addEventListener("input", () => {
-        const query = searchInput.value.toLowerCase();
-        const filteredWines = wines.filter(wine =>
-            wine.name.toLowerCase().includes(query) ||
-            wine.type.toLowerCase().includes(query) ||
-            wine.year.includes(query)
-        );
-        displayWines(filteredWines);
-    });
-
-    function displayWines(wines) {
-        wineTableBody.innerHTML = "";
-        wines.forEach(wine => {
-            const row = document.createElement("tr");
-            row.innerHTML = `
-                <td>${wine.name}</td>
-                <td>${wine.type}</td>
-                <td>${wine.year}</td>
-                <td>${wine.rating}</td>
-                <td>${wine.notes}</td>
-            `;
-            wineTableBody.appendChild(row);
+                trailersContainer.appendChild(trailerDiv);
+            }
         });
     }
 
-    window.sortTable = (n) => {
-        let rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
-        const table = document.getElementById("wineTable");
-        switching = true;
-        dir = "asc";
-        while (switching) {
-            switching = false;
-            rows = table.rows;
-            for (i = 1; i < (rows.length - 1); i++) {
-                shouldSwitch = false;
-                x = rows[i].getElementsByTagName("TD")[n];
-                y = rows[i + 1].getElementsByTagName("TD")[n];
-                if (dir == "asc") {
-                    if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
-                        shouldSwitch = true;
-                        break;
-                    }
-                } else if (dir == "desc") {
-                    if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
-                        shouldSwitch = true;
-                        break;
-                    }
-                }
-            }
-            if (shouldSwitch) {
-                rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
-                switching = true;
-                switchcount++;
-            } else {
-                if (switchcount == 0 && dir == "asc") {
-                    dir = "desc";
-                    switching = true;
-                }
-            }
-        }
-    }
+    priceRange.addEventListener('input', () => {
+        priceValue.textContent = priceRange.value;
+        renderTrailers();
+    });
+
+    addTrailerForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        const newTrailer = {
+            name: addTrailerForm.name.value,
+            year: addTrailerForm.year.value,
+            price: addTrailerForm.price.value,
+            image: addTrailerForm.image.value
+        };
+
+        trailers.push(newTrailer);
+        renderTrailers();
+        addTrailerForm.reset();
+    });
+
+    window.editTrailer = (index) => {
+        const trailer = trailers[index];
+        const newName = prompt("Nowa nazwa:", trailer.name);
+        const newYear = prompt("Nowy rok:", trailer.year);
+        const newPrice = prompt("Nowa cena:", trailer.price);
+        const newImage = prompt("Nowy URL zdjęcia:", trailer.image);
+
+        if (newName) trailer.name = newName;
+        if (newYear) trailer.year = parseInt(newYear);
+        if (newPrice) trailer.price = parseFloat(newPrice);
+        if (newImage) trailer.image = newImage;
+
+        renderTrailers();
+    };
+
+    window.deleteTrailer = (index) => {
+        trailers.splice(index, 1);
+        renderTrailers();
+    };
+
+    priceValue.textContent = priceRange.value;
+    renderTrailers();
 });

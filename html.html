@@ -1,51 +1,54 @@
 <!DOCTYPE html>
-<html lang="pl">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Moja Kolekcja Win</title>
+    <title>AgraTrans - Wynajem</title>
     <link rel="stylesheet" href="css.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Moja Kolekcja Win</h1>
-        <form id="wineForm">
-            <div>
-                <label for="name">Nazwa Wina:</label>
+    <header>
+        <div class="logo">
+            <img src="Bez_tytułu.png" alt="AgraTrans Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#">Sprzedaż</a></li>
+                <li><a href="#" class="active">Wynajem</a></li>
+                <li><a href="#">O firmie</a></li>
+                <li><a href="#">Kontakt</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <section class="filters">
+            <h2>Filtruj według ceny</h2>
+            <label for="priceRange">Cena: <span id="priceValue"></span> zł</label>
+            <input type="range" id="priceRange" min="0" max="10000" step="50" value="10000">
+        </section>
+        
+        <section class="add-trailer">
+            <h2>Dodaj nową naczepę</h2>
+            <form id="addTrailerForm">
+                <label for="name">Nazwa:</label>
                 <input type="text" id="name" required>
-            </div>
-            <div>
-                <label for="type">Rodzaj Wina:</label>
-                <input type="text" id="type" required>
-            </div>
-            <div>
-                <label for="year">Rok Produkcji:</label>
+                <label for="year">Rok:</label>
                 <input type="number" id="year" required>
-            </div>
-            <div>
-                <label for="rating">Ocena:</label>
-                <input type="number" id="rating" min="0" max="10" required>
-            </div>
-            <div>
-                <label for="notes">Notatki Degustacyjne:</label>
-                <textarea id="notes" rows="4"></textarea>
-            </div>
-            <button type="submit">Dodaj Wino</button>
-        </form>
-        <input type="text" id="search" placeholder="Szukaj według nazwy, rodzaju lub roku">
-        <table id="wineTable">
-            <thead>
-                <tr>
-                    <th onclick="sortTable(0)">Nazwa</th>
-                    <th onclick="sortTable(1)">Rodzaj</th>
-                    <th onclick="sortTable(2)">Rok</th>
-                    <th onclick="sortTable(3)">Ocena</th>
-                    <th>Notatki</th>
-                </tr>
-            </thead>
-            <tbody></tbody>
-        </table>
-    </div>
+                <label for="price">Cena:</label>
+                <input type="number" id="price" required>
+                <label for="image">Zdjęcie URL:</label>
+                <input type="url" id="image" required>
+                <button type="submit">Dodaj</button>
+            </form>
+        </section>
+        
+        <section class="trailers" id="trailers">
+            <h2>Wynajem</h2>
+            <!-- Trailers will be dynamically added here -->
+        </section>
+    </main>
+    
     <script src="js.js"></script>
 </body>
 </html>
