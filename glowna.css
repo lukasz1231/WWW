@@ -11,8 +11,8 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgba(0, 0, 0, 0.7);
-    padding: 10px 30px;
+    background-color: rgba(0, 0, 0, 0.85); /* Black color with transparency */
+    padding: 10px 10px;
     position: relative;
     z-index: 2;
     width: 100%;
@@ -30,7 +30,7 @@ header {
 nav ul {
     list-style-type: none;
     margin: 0;
-    padding: 0;
+    padding: 10px;
     display: flex;
     gap: 20px;
 }
@@ -101,7 +101,7 @@ main {
     }
 
     nav ul {
-        flex-direction: column;
+        flex-direction: row;
         gap: 10px;
     }
 
