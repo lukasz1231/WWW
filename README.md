@@ -1,5 +1,7 @@
 DO DODANIA:
 
+-wszedzie w menu dodac ze klikniecie w logo przenosi na strone główną
+
 *Strona głowna:
 -pasek menu na niewidoczny ale wchodzący w czerń + wydłużenie go (zrobione)
 -ewentualna zmiana czcionki w niektorych miejscach (zrobione)
