@@ -1,17 +1,19 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: Arial;
     margin: 0;
     padding: 0;
     height: 100vh;
     display: flex;
     flex-direction: column;
+    background: url('https://i.pinimg.com/originals/f0/c1/10/f0c1108cd1a98a5ca3acd1fc443034ec.jpg') no-repeat center center fixed;
+    background-size: cover;
 }
 
 header {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgba(0, 0, 0, 0.85); /* Black color with transparency */
+    background-color: rgba(0, 0, 0, 0.7); /* Black color with transparency */
     padding: 10px 10px;
     position: relative;
     z-index: 2;
@@ -24,7 +26,7 @@ header {
 }
 
 .logo img {
-    height: 50px;
+    height: 60px;
 }
 
 nav ul {
@@ -54,11 +56,12 @@ main {
     position: relative;
     flex-grow: 1;
     display: flex;
-    align-items: flex-end;
-    justify-content: flex-start;
+    align-items: center; 
+    justify-content: top;
     padding: 20px;
-    background: url('https://i.pinimg.com/originals/94/79/1a/94791a03f73dce4ff6afbcabadb006e7.jpg') no-repeat center center fixed;
-    background-size: cover;
+    flex-direction: column;
+    text-align: center; /* Center the text horizontally */
+    padding-top: 120px;
 }
 
 .overlay {
@@ -77,16 +80,27 @@ main {
     color: white;
 }
 
-.company-name h1 {
+.nazwa-firmy h1 {
+    font-family:'Trebuchet MS', sans-serif;
     font-size: 48px;
     font-weight: bold;
     margin: 0;
 }
 
-.description p {
+.opis p {
     font-size: 24px;
-    margin: 0;
+    margin: 10px 0 0 0; /* Add some margin on top for spacing */
 }
+
+footer {
+    background-color: rgba(0, 0, 0, 0.7); /* Czarne tło z 50% przezroczystości */
+    color: white; /* Biały kolor tekstu */
+    text-align: center; /* Wycentruj tekst */
+    padding: 5px; /* Dodaj odstępy wewnątrz stopki */
+    position: relative; /* Pozycja relatywna, aby umieścić stopkę na dole ekranu */
+    z-index: 2; /* Ustaw z-index większy niż warstwa z overlayem */
+}
+
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
@@ -105,11 +119,11 @@ main {
         gap: 10px;
     }
 
-    .company-name h1 {
+    .nazwa-firmy h1 {
         font-size: 36px;
     }
 
-    .description p {
+    .opis p {
         font-size: 18px;
     }
 }
@@ -127,11 +141,12 @@ main {
         padding: 5px 10px;
     }
 
-    .company-name h1 {
+    .nazwa-firmy h1 {
         font-size: 28px;
     }
 
-    .description p {
+    .opis p {
         font-size: 16px;
     }
 }
+
