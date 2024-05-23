@@ -7,6 +7,7 @@ body {
     flex-direction: column;
     background: url('https://i.pinimg.com/originals/f0/c1/10/f0c1108cd1a98a5ca3acd1fc443034ec.jpg') no-repeat center center fixed;
     background-size: cover;
+    overflow: hidden;
 }
 
 header {
@@ -68,7 +69,7 @@ main {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
+    width: 110%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
     z-index: 1;
@@ -99,6 +100,8 @@ footer {
     padding: 5px; /* Dodaj odstępy wewnątrz stopki */
     position: relative; /* Pozycja relatywna, aby umieścić stopkę na dole ekranu */
     z-index: 2; /* Ustaw z-index większy niż warstwa z overlayem */
+    width: 110%;
+    left: -100px;
 }
 
 
