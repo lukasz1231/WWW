@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wynajem</title>
+    <link rel="stylesheet" href="wynajem-main.css">
+</head>
+<body>
+    <header>
+        <h1>Wynajem</h1>
+    </header>
+    <main>
+        <div class="offer">
+            <div class="carousel" id="carousel1">
+                <button class="prev" onclick="changeSlide(-1, 'carousel1')">&#10094;</button>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzVGIdUCh1hcsLtF_8B9MSrVWmz5kCJFVdaA&usqp=CAU" alt="Oferta 1" class="slide active">
+                <img src="https://comparic.pl/wp-content/uploads/2018/11/wielton.jpg" alt="Oferta 2" class="slide">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRh89pxxbxlOcsWjhouqOT9lq0sPJL3_CedlGgIlDykp87A5atjO17ZTqBKqzqWCahOkXw&usqp=CAU" alt="Oferta 3" class="slide">
+                <button class="next" onclick="changeSlide(1, 'carousel1')">&#10095;</button>
+            </div>
+            <p class="cena">Cena: 3500zł + VAT/miesiąc</p>
+            <button class="accordion">OPIS</button>
+            <div class="panel">
+                <p><strong>Marka:</strong> Wielton</p>
+                <p><strong>Rok produkcji:</strong> 2018</p>
+                <p><strong>VIN:</strong> WIELTON00000012345</p>
+                <p><strong>Typ naczepy:</strong> Platforma</p>
+            </div>
+        </div>
+        
+        <div class="offer">
+            <div class="carousel" id="carousel2">
+                <button class="prev" onclick="changeSlide(-1, 'carousel2')">&#10094;</button>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzVGIdUCh1hcsLtF_8B9MSrVWmz5kCJFVdaA&usqp=CAU" alt="Oferta 1" class="slide active">
+                <img src="https://comparic.pl/wp-content/uploads/2018/11/wielton.jpg" alt="Oferta 2" class="slide">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRh89pxxbxlOcsWjhouqOT9lq0sPJL3_CedlGgIlDykp87A5atjO17ZTqBKqzqWCahOkXw&usqp=CAU" alt="Oferta 3" class="slide">
+                <button class="next" onclick="changeSlide(1, 'carousel2')">&#10095;</button>
+            </div>
+            <p class="cena">Cena: 4500zł + VAT/miesiąc</p>
+            <button class="accordion">OPIS</button>
+            <div class="panel">
+                <p><strong>Marka:</strong> Krone</p>
+                <p><strong>Rok produkcji:</strong> 2021</p>
+                <p><strong>VIN:</strong> KRONE343254543</p>
+                <p><strong>Typ naczepy:</strong> Chłodnia</p>
+            </div>
+
+            <!-- wiecej ofert dodajemy w ten sam sposob kopiujac ten kod-->
+    </main>
+    <script src="wynajem-main.js"></script>
+</body>
+</html>
