@@ -1,5 +1,8 @@
 DO DODANIA:
 
+menu zmienic wszedzie tak zeby jakos to wygladalo
+
+
 *Strona głowna:
 -pasek menu na niewidoczny ale wchodzący w czerń + wydłużenie go (zrobione)
 -ewentualna zmiana czcionki w niektorych miejscach (zrobione)
@@ -9,8 +12,8 @@ DO DODANIA:
 -zmiana zdjecia w tle - na ladniejsze (zrobione)
 
 *Wynajem:
-- dodac takie same menu
--
+- przeglądanie oferty zrobione
+- dodac filtry
 -
 -
 -
@@ -27,5 +30,10 @@ DO DODANIA:
 -
 -
 -
+-
+-
+
+*Panel administratora
+- polaczyc go z wynajmem
 -
 -
