@@ -1,89 +1,39 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const trailers = [
-        {
-            name: "Wynajem Naczepy Chłodni Schmitz 2021r.",
-            year: 2021,
-            price: 4450,
-            image: "trailer1.jpg"
-        },
-        {
-            name: "Ładowarka Teleskopowa JCB, MANITOU",
-            year: 2021,
-            price: 7500,
-            image: "trailer2.jpg"
-        }
-    ];
+document.addEventListener('DOMContentLoaded', (event) => {
+    initializeCarousels();
+    initializeAccordions();
+});
 
-    const trailersContainer = document.getElementById('trailers');
-    const priceRange = document.getElementById('priceRange');
-    const priceValue = document.getElementById('priceValue');
-    const addTrailerForm = document.getElementById('addTrailerForm');
+function initializeCarousels() {
+    const carousels = document.querySelectorAll('.carousel');
+    carousels.forEach(carousel => {
+        let slides = carousel.getElementsByClassName('slide');
+        slides[0].classList.add('active');
+        carousel.dataset.currentSlide = 0;
+    });
+}
 
-    function renderTrailers() {
-        trailersContainer.innerHTML = '';
-        trailers.forEach((trailer, index) => {
-            if (trailer.price <= priceRange.value) {
-                const trailerDiv = document.createElement('div');
-                trailerDiv.classList.add('trailer');
+function changeSlide(n, carouselId) {
+    const carousel = document.getElementById(carouselId);
+    const slides = carousel.getElementsByClassName('slide');
+    let currentSlide = parseInt(carousel.dataset.currentSlide);
 
-                trailerDiv.innerHTML = `
-                    <img src="${trailer.image}" alt="${trailer.name}">
-                    <div class="trailer-details">
-                        <h3>${trailer.name}</h3>
-                        <p>Rok: ${trailer.year}</p>
-                        <p>Cena: ${trailer.price} zł + VAT</p>
-                    </div>
-                    <div class="trailer-actions">
-                        <button onclick="editTrailer(${index})">Edytuj</button>
-                        <button onclick="deleteTrailer(${index})">Usuń</button>
-                    </div>
-                `;
+    slides[currentSlide].classList.remove('active');
+    currentSlide = (currentSlide + n + slides.length) % slides.length;
+    slides[currentSlide].classList.add('active');
+    carousel.dataset.currentSlide = currentSlide;
+}
 
-                trailersContainer.appendChild(trailerDiv);
+function initializeAccordions() {
+    const accordions = document.querySelectorAll('.accordion');
+    accordions.forEach(accordion => {
+        accordion.addEventListener('click', function() {
+            this.classList.toggle('active');
+            const panel = this.nextElementSibling;
+            if (panel.style.display === "block") {
+                panel.style.display = "none";
+            } else {
+                panel.style.display = "block";
             }
         });
-    }
-
-    priceRange.addEventListener('input', () => {
-        priceValue.textContent = priceRange.value;
-        renderTrailers();
     });
-
-    addTrailerForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-
-        const newTrailer = {
-            name: addTrailerForm.name.value,
-            year: addTrailerForm.year.value,
-            price: addTrailerForm.price.value,
-            image: addTrailerForm.image.value
-        };
-
-        trailers.push(newTrailer);
-        renderTrailers();
-        addTrailerForm.reset();
-    });
-
-    window.editTrailer = (index) => {
-        const trailer = trailers[index];
-        const newName = prompt("Nowa nazwa:", trailer.name);
-        const newYear = prompt("Nowy rok:", trailer.year);
-        const newPrice = prompt("Nowa cena:", trailer.price);
-        const newImage = prompt("Nowy URL zdjęcia:", trailer.image);
-
-        if (newName) trailer.name = newName;
-        if (newYear) trailer.year = parseInt(newYear);
-        if (newPrice) trailer.price = parseFloat(newPrice);
-        if (newImage) trailer.image = newImage;
-
-        renderTrailers();
-    };
-
-    window.deleteTrailer = (index) => {
-        trailers.splice(index, 1);
-        renderTrailers();
-    };
-
-    priceValue.textContent = priceRange.value;
-    renderTrailers();
-});
+}

@@ -3,52 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AgraTrans - Wynajem</title>
+    <title>Wynajem</title>
     <link rel="stylesheet" href="wynajem.css">
 </head>
 <body>
     <header>
-        <div class="logo">
-            <img src="https://e7.pngegg.com/pngimages/779/61/png-clipart-logo-idea-cute-eagle-leaf-logo.png" alt="AgraTrans Logo">
-        </div>
+
         <nav>
             <ul>
-                <li><a href="glowna.html">Strona Główna</a></li>
+                <li><a href=glowna.html class="logo"><img src="https://img.freepik.com/premium-vector/freight-truck-line-art-illustration-box-truck-vector-icon-dark-background_23758-1180.jpg" alt="Logo firmy"></a></li>
                 <li><a href="wynajem.html">Wynajem</a></li>
                 <li><a href="o-nas.html">O Nas</a></li>
                 <li><a href="kontakt.html">Kontakt</a></li>
             </ul>
         </nav>
     </header>
-    
+
     <main>
-        <section class="filters">
-            <h2>Filtruj według ceny</h2>
-            <label for="priceRange">Cena: <span id="priceValue"></span> zł</label>
-            <input type="range" id="priceRange" min="0" max="10000" step="50" value="10000">
-        </section>
+        <div class="offer">
+            <div class="carousel" id="carousel1">
+                <button class="prev" onclick="changeSlide(-1, 'carousel1')">&#10094;</button>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzVGIdUCh1hcsLtF_8B9MSrVWmz5kCJFVdaA&usqp=CAU" alt="Oferta 1" class="slide active">
+                <img src="https://comparic.pl/wp-content/uploads/2018/11/wielton.jpg" alt="Oferta 2" class="slide">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRh89pxxbxlOcsWjhouqOT9lq0sPJL3_CedlGgIlDykp87A5atjO17ZTqBKqzqWCahOkXw&usqp=CAU" alt="Oferta 3" class="slide">
+                <button class="next" onclick="changeSlide(1, 'carousel1')">&#10095;</button>
+            </div>
+            <p class="cena">Cena: 3500zł + VAT/miesiąc</p>
+            <button class="accordion">OPIS</button>
+            <div class="panel">
+                <p><strong>Marka:</strong> Wielton</p>
+                <p><strong>Rok produkcji:</strong> 2018</p>
+                <p><strong>VIN:</strong> WIELTON00000012345</p>
+                <p><strong>Typ naczepy:</strong> Platforma</p>
+            </div>
+        </div>
         
-        <section class="add-trailer">
-            <h2>Dodaj nową naczepę</h2>
-            <form id="addTrailerForm">
-                <label for="name">Nazwa:</label>
-                <input type="text" id="name" required>
-                <label for="year">Rok:</label>
-                <input type="number" id="year" required>
-                <label for="price">Cena:</label>
-                <input type="number" id="price" required>
-                <label for="image">Zdjęcie URL:</label>
-                <input type="url" id="image" required>
-                <button type="submit">Dodaj</button>
-            </form>
-        </section>
-        
-        <section class="trailers" id="trailers">
-            <h2>Wynajem</h2>
-            <!-- Trailers will be dynamically added here -->
-        </section>
+        <div class="offer">
+            <div class="carousel" id="carousel2">
+                <button class="prev" onclick="changeSlide(-1, 'carousel2')">&#10094;</button>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzVGIdUCh1hcsLtF_8B9MSrVWmz5kCJFVdaA&usqp=CAU" alt="Oferta 1" class="slide active">
+                <img src="https://comparic.pl/wp-content/uploads/2018/11/wielton.jpg" alt="Oferta 2" class="slide">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRh89pxxbxlOcsWjhouqOT9lq0sPJL3_CedlGgIlDykp87A5atjO17ZTqBKqzqWCahOkXw&usqp=CAU" alt="Oferta 3" class="slide">
+                <button class="next" onclick="changeSlide(1, 'carousel2')">&#10095;</button>
+            </div>
+            <p class="cena">Cena: 4500zł + VAT/miesiąc</p>
+            <button class="accordion">OPIS</button>
+            <div class="panel">
+                <p><strong>Marka:</strong> Krone</p>
+                <p><strong>Rok produkcji:</strong> 2021</p>
+                <p><strong>VIN:</strong> KRONE343254543</p>
+                <p><strong>Typ naczepy:</strong> Chłodnia</p>
+            </div>
+
+            <!-- wiecej ofert dodajemy w ten sam sposob kopiujac ten kod-->
     </main>
-    
     <script src="wynajem.js"></script>
 </body>
 </html>

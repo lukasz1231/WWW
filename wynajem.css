@@ -1,84 +1,149 @@
+
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
+    color: #000;
+    background: #fff;
     margin: 0;
     padding: 0;
 }
 
+/* Stylowanie nagłówka */
 header {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    background-color: #f8f8f8;
-    padding: 10px 20px;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 20px 20px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
 }
 
-.logo img {
-    height: 50px;
+header .logo {
+    top: 0px;
+    position: absolute;
+    left: 0px;
+    padding: 7px 10px; 
+    
 }
 
-nav ul {
+header .logo img {
+    height: 60px;
+}
+
+header nav ul {
     list-style-type: none;
     margin: 0;
-    padding: 0;
+    padding: 10px;
     display: flex;
     gap: 20px;
 }
 
-nav ul li {
+header nav ul li {
     display: inline;
+    
 }
 
-nav ul li a {
-    text-decoration: none;
-    color: #333;
-    padding: 10px 20px;
-}
-
-nav ul li a.active, nav ul li a:hover {
-    background-color: #333;
+header nav ul li a {
     color: #fff;
+    text-decoration: none;
+    padding: 30px 20px;
+}
+
+header nav ul li a:hover {
+    background-color: #333;
+    color: #ddd;
+}
+
+h1 {
+    margin: 0;
 }
 
 main {
-    padding: 20px;
+    padding: 1em;
 }
 
-.filters, .add-trailer, .trailers {
-    margin-bottom: 20px;
+.offer {
+    margin: 1em auto;
+    max-width: 600px;
+    border: 1px solid #ddd;
+    padding: 1em;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-form {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+.carousel {
+    position: relative;
+    max-width: 100%;
+    margin: auto;
 }
 
-form label {
+.slide {
+    display: none;
+    width: 100%;
+}
+
+.active {
+    display: block;
+}
+
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: auto;
+    padding: 16px;
     font-weight: bold;
+    font-size: 18px;
+    user-select: none;
+    background: rgba(0, 0, 0, 0.5);
+    border: none;
+    color: white;
 }
 
-form input, form button {
+.prev {
+    left: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.next {
+    right: 0;
+    border-radius: 0 3px 3px 0;
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Akordeon styl */
+.accordion {
+    font-family: Arial, Helvetica;
+    font-weight: bold;
+    color: #000000;
+    cursor: pointer;
     padding: 10px;
-    font-size: 16px;
+    width: 100%;
+    text-align: center;
+    border: none;
+    outline: none;
+    transition: 0.4s;
 }
 
-.trailer {
-    border: 1px solid #ccc;
-    padding: 10px;
-    margin-bottom: 10px;
-    display: flex;
-    gap: 20px;
+.accordion.active, .accordion:hover {
+    background-color: #ccc;
 }
 
-.trailer img {
-    height: 100px;
+.panel {
+    padding: 0 18px;
+    display: none;
+    background-color: white;
+    overflow: hidden;
 }
 
-.trailer-details {
-    flex-grow: 1;
-}
-
-.trailer-actions {
-    display: flex;
-    gap: 10px;
+.cena {
+    font-family: Franklin Gothic Medium, Arial;
+    font-style: italic;
+    font-weight: bold;
+    
 }
