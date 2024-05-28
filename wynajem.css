@@ -268,6 +268,24 @@ main {
     background-color: #0056b3;
 }
 
+/* Nowy styl dla wyboru lat produkcji */
+#year-range-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+#year-range-container label {
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #555;
+}
+
+#year-range-container select {
+    width: 48%;
+}
+
 /* Stylowanie stopki */
 footer {
     background-color: rgba(0, 0, 0); 

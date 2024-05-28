@@ -8,10 +8,9 @@
 </head>
 <body>
     <header>
-
         <nav>
             <ul>
-                <li><a href=glowna.html class="logo"><img src="https://img.freepik.com/premium-vector/freight-truck-line-art-illustration-box-truck-vector-icon-dark-background_23758-1180.jpg" alt="Logo firmy"></a></li>
+                <li><a href="glowna.html" class="logo"><img src="https://img.freepik.com/premium-vector/freight-truck-line-art-illustration-box-truck-vector-icon-dark-background_23758-1180.jpg" alt="Logo firmy"></a></li>
                 <li><a href="wynajem.html">Wynajem</a></li>
                 <li><a href="o-nas.html">O Nas</a></li>
                 <li><a href="kontakt.html">Kontakt</a></li>
@@ -29,24 +28,106 @@
 
                 <label for="brand-select">Marka:</label>
                 <select id="brand-select" name="brand">
-                    <option value="all">Wszystkie</option>
+                    <option value="all">Dowolna</option>
                     <option value="Wielton">Wielton</option>
                     <option value="Krone">Krone</option>
                 </select>
 
                 <label for="type-select">Typ naczepy:</label>
                 <select id="type-select" name="type">
-                    <option value="all">Wszystkie</option>
+                    <option value="all">Dowolny</option>
                     <option value="Platforma">Platforma</option>
                     <option value="Chłodnia">Chłodnia</option>
                 </select>
+                
+                <div id="year-range-container">
+                    <label for="year-from-select">Rok produkcji od:</label>
+                    <select id="year-from-select" name="year-from">
+                        <option value="all">Dowolny</option>
+                        <option value="2023">2023</option>
+                        <option value="2022">2022</option>
+                        <option value="2021">2021</option>
+                        <option value="2020">2020</option>
+                        <option value="2019">2019</option>
+                        <option value="2018">2018</option>
+                        <option value="2017">2017</option>
+                        <option value="2016">2016</option>
+                        <option value="2015">2015</option>
+                        <option value="2014">2014</option>
+                        <option value="2013">2013</option>
+                        <option value="2012">2012</option>
+                        <option value="2011">2011</option>
+                        <option value="2010">2010</option>
+                        <option value="2009">2009</option>
+                        <option value="2008">2008</option>
+                        <option value="2007">2007</option>
+                        <option value="2006">2006</option>
+                        <option value="2005">2005</option>
+                        <option value="2004">2004</option>
+                        <option value="2003">2003</option>
+                        <option value="2002">2002</option>
+                        <option value="2001">2001</option>
+                        <option value="2000">2000</option>
+                        <option value="1999">1999</option>
+                        <option value="1998">1998</option>
+                        <option value="1997">1997</option>
+                        <option value="1996">1996</option>
+                        <option value="1995">1995</option>
+                        <option value="1994">1994</option>
+                        <option value="1993">1993</option>
+                        <option value="1992">1992</option>
+                        <option value="1991">1991</option>
+                        <option value="1990">1990</option>
+                        
+                        <!-- Dodaj inne lata w razie potrzeby -->
+                    </select>
+
+                    <label for="year-to-select">Rok produkcji do:</label>
+                    <select id="year-to-select" name="year-to">
+                        <option value="all">Dowolny</option>
+                        <option value="2023">2023</option>
+                        <option value="2022">2022</option>
+                        <option value="2021">2021</option>
+                        <option value="2020">2020</option>
+                        <option value="2019">2019</option>
+                        <option value="2018">2018</option>
+                        <option value="2017">2017</option>
+                        <option value="2016">2016</option>
+                        <option value="2015">2015</option>
+                        <option value="2014">2014</option>
+                        <option value="2013">2013</option>
+                        <option value="2012">2012</option>
+                        <option value="2011">2011</option>
+                        <option value="2010">2010</option>
+                        <option value="2009">2009</option>
+                        <option value="2008">2008</option>
+                        <option value="2007">2007</option>
+                        <option value="2006">2006</option>
+                        <option value="2005">2005</option>
+                        <option value="2004">2004</option>
+                        <option value="2003">2003</option>
+                        <option value="2002">2002</option>
+                        <option value="2001">2001</option>
+                        <option value="2000">2000</option>
+                        <option value="1999">1999</option>
+                        <option value="1998">1998</option>
+                        <option value="1997">1997</option>
+                        <option value="1996">1996</option>
+                        <option value="1995">1995</option>
+                        <option value="1994">1994</option>
+                        <option value="1993">1993</option>
+                        <option value="1992">1992</option>
+                        <option value="1991">1991</option>
+                        <option value="1990">1990</option>
+                        <!-- Dodaj inne lata w razie potrzeby -->
+                    </select>
+                </div>
             </form>
         </section>
 
         <div id="offers-container">
             <!-- Tutaj będą wczytywane oferty -->
         </div>
-           <!-- wiecej ofert dodajemy w ten sam sposob kopiujac ten kod-->
     </main>
     <footer>
         <p>&copy; 2024 PB TRANS. Wszelkie prawa zastrzeżone.</p>
