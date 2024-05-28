@@ -1,8 +1,3 @@
-
-DO DODANIA:
-- dodanie opcji ustawienia danej oferty przez administratora jako wynajęta
-- potestowanie i pozmienianie tak aby dodawało jedną oferte na raz
-
 # DO DODANIA:
 na sam koniec:
 - trzeba przejść przez kod i wyczyścić go ze zbędnych rzeczy oraz pozmieniać tak zeby nie wygladalo na chatgpt
@@ -36,19 +31,19 @@ WYKONANA ROBOTA:
 - przeglądanie oferty (zrobione)
 - dodac filtry (zrobione, ewentualnie mozna dodac jeszcze wiecej opcji i popawic sie wygladem)
 - pasek menu, ktory nie bedzie sie przemieszczal wraz ze scrollowaniem (zrobione)
--
+- usunąłem w javascripcie możliwość wysyłania maila
 -
 
 *O nas:
--
--
+- dodac zdjecie
+- mozna jakoś uładnić
 -
 -
 -
 -
 
 *Kontakt:
--
+- można jakoś uładnić
 -
 -
 -
@@ -56,5 +51,6 @@ WYKONANA ROBOTA:
 
 *Panel administratora
 - polaczyc go z wynajmem (zrobione)
--
--
+- dodanie opcji ustawienia danej oferty przez administratora jako wynajęta
+- potestowanie i pozmienianie tak aby dodawało jedną oferte na raz
+- dodanie sprawdzania czy podane wartości są poprawne (poprawny vin itd)
