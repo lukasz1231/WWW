@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', (event) => {
     initializeCarousels();
     initializeAccordions();
+    initializeFilters();
 });
 
 function initializeCarousels() {
@@ -36,4 +37,58 @@ function initializeAccordions() {
             }
         });
     });
+}
+
+function initializeFilters() {
+    const priceRange = document.getElementById('price-range');
+    const priceLabel = document.getElementById('price-label');
+    const brandSelect = document.getElementById('brand-select');
+    const typeSelect = document.getElementById('type-select');
+    const offers = document.querySelectorAll('.offer');
+
+    // Aktualizuj etykietę ceny
+    function updatePriceLabel(value) {
+        priceLabel.textContent = `${value} zł`;
+    }
+
+    // Filtruj oferty
+    function filterOffers() {
+        const selectedPrice = parseInt(priceRange.value);
+        const selectedBrand = brandSelect.value;
+        const selectedType = typeSelect.value;
+
+        offers.forEach(offer => {
+            const offerPrice = parseInt(offer.getAttribute('data-price'));
+            const offerBrand = offer.getAttribute('data-brand');
+            const offerType = offer.getAttribute('data-type');
+
+            let showOffer = true;
+
+            if (offerPrice > selectedPrice) {
+                showOffer = false;
+            }
+
+            if (selectedBrand !== 'all' && offerBrand !== selectedBrand) {
+                showOffer = false;
+            }
+
+            if (selectedType !== 'all' && offerType !== selectedType) {
+                showOffer = false;
+            }
+
+            offer.style.display = showOffer ? 'block' : 'none';
+        });
+    }
+
+    // Przypisz funkcje do odpowiednich elementów
+    priceRange.addEventListener('input', () => {
+        updatePriceLabel(priceRange.value);
+        filterOffers();
+    });
+
+    brandSelect.addEventListener('change', filterOffers);
+    typeSelect.addEventListener('change', filterOffers);
+
+    // Wywołaj funkcję filtrowania na początku, aby ukryć nieodpowiednie oferty
+    filterOffers();
 }
