@@ -111,16 +111,86 @@ main {
 
 /* Stylowanie stopki */
 footer {
-    background-color: rgba(0, 0, 0, 0.7); 
+    background-color: rgba(0, 0, 0); 
     color: white; 
-    position: static;
     text-align: center; 
     padding: 10px 0; 
-    bottom: 0px; 
     width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
 }
 
 footer p {
     font-size: 14px;
     margin: 0;
+}
+
+/* Stylowanie formularza kontaktowego */
+#contact-form form {
+    display: none; /* Domyślnie ukrywamy formularz */
+}
+
+#contact-form input,
+#contact-form textarea {
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: calc(100% - 22px); /* Ustawiamy szerokość na 100% minus padding */
+}
+
+#contact-form button {
+    padding: 8px 15px; /* Zmniejszamy padding przycisku */
+    font-size: 14px; /* Zmniejszamy rozmiar czcionki */
+    margin-bottom: 20px;
+}
+
+#contact-form button:hover {
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+/* Akordeon */
+input.accordion-checkbox {
+    display: none;
+}
+
+/* Akordeon */
+label.accordion-label {
+    padding: 8px 15px; /* Zmniejszamy padding etykiety przycisku */
+}
+
+label.accordion-label:hover {
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+input.accordion-checkbox:checked ~ .accordion-content {
+    display: block;
+}
+
+form.accordion-content {
+    display: none;
+    padding-top: 15px; /* Dodajemy większą przerwę między przyciskiem a zawartością */
+}
+
+form.accordion-content label {
+    display: block;
+}
+
+form.accordion-content input,
+form.accordion-content textarea {
+    width: calc(100% - 20px);
+}
+
+#mapa {
+    text-align: center;
+    margin: 0 auto;
+    max-width: 600px; /* Ograniczamy maksymalną szerokość mapy */
+}
+
+#godziny-pracy {
+    text-align: center;
+    font-family:'Lato', sans-serif;
+    font-size: 14px;
+    margin-top: 10px;
 }
