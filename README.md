@@ -1,6 +1,7 @@
 # DO DODANIA:
 na sam koniec:
 - trzeba przejść przez kod i wyczyścić go ze zbędnych rzeczy oraz pozmieniać tak zeby nie wygladalo na chatgpt
+- spolszczenie kodu (w 70% zrobione)
 - dodać dokumentacje czyli opisać dokładnie co robią dane linijki kodu
 
 - menu zmienic wszedzie tak zeby jakos to wygladalo
