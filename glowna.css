@@ -102,12 +102,19 @@ footer {
     background-color: rgba(0, 0, 0, 0.7); /* Czarne tło z 50% przezroczystości */
     color: white; /* Biały kolor tekstu */
     text-align: center; /* Wycentruj tekst */
-    padding: 5px; /* Dodaj odstępy wewnątrz stopki */
+    padding: 0px; /* Dodaj odstępy wewnątrz stopki */
     position: relative; /* Pozycja relatywna, aby umieścić stopkę na dole ekranu */
+    bottom: 0px;
     z-index: 2; /* Ustaw z-index większy niż warstwa z overlayem */
-    width: 110%;
+    width: 100%;
 
 }
+
+footer p {
+    font-size: 14px;
+    margin: 0px 0;
+}
+
 
 
 /* Responsive adjustments */

@@ -55,3 +55,18 @@ header nav ul li a:hover {
     background-color: #333;
     color: #ddd;
 }
+/* Stylowanie stopki */
+footer {
+    background-color: rgba(0, 0, 0); 
+    color: white; 
+    position: absolute; /* narazie daje absolut i zawsze bedzie na dole strony bo nie wiem jak zrobic zeby faktycznie byl na dole*/
+    text-align: center; 
+    padding: 0px; 
+    bottom: 0px; 
+    width: 100%;
+}
+
+footer p {
+    font-size: 14px;
+    margin: 0px 0;
+}
