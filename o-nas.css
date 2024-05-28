@@ -75,18 +75,18 @@ main {
     text-align: center;
 }
 
-main .content {
+main .tresc {
     max-width: 800px;
 }
 
-main .content .nazwa-firmy h1 {
+main .tresc .nazwa-firmy h1 {
     font-family: 'Trebuchet MS', sans-serif;
     font-size: 48px;
     font-weight: bold;
     margin-bottom: 20px;
 }
 
-main .content .opis p {
+main .tresc .opis p {
     font-size: 18px;
     margin: 10px 0;
     line-height: 1.6;

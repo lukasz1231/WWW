@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function() {
-    var formButton = document.getElementById("show-form");
-    var formContent = document.getElementById("form-content");
+    var formButton = document.getElementById("przycisk-pokaz");
+    var formContent = document.getElementById("tresc-formularza");
 
     formButton.addEventListener("click", function() {
         if (formContent.style.display === "none") {

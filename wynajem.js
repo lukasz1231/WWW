@@ -39,15 +39,15 @@ function initializeAccordions() {
 }
 
 function updatePriceLabel(value) {
-    document.getElementById('price-label').textContent = `${value} zł`;
+    document.getElementById('etykieta-ceny').textContent = `${value} zł`;
 }
 
 function initializeFilters() {
-    const priceRange = document.getElementById('price-range');
-    const brandSelect = document.getElementById('brand-select');
-    const typeSelect = document.getElementById('type-select');
-    const yearFromSelect = document.getElementById('year-from-select');
-    const yearToSelect = document.getElementById('year-to-select');
+    const priceRange = document.getElementById('zakres-cen');
+    const brandSelect = document.getElementById('wybor-marki');
+    const typeSelect = document.getElementById('wybor-typu');
+    const yearFromSelect = document.getElementById('rok-od-wybor');
+    const yearToSelect = document.getElementById('rok-do-wybor');
 
     priceRange.addEventListener('input', () => {
         updatePriceLabel(priceRange.value);
@@ -63,12 +63,12 @@ function initializeFilters() {
 }
 
 function filterOffers() {
-    const selectedPrice = parseInt(document.getElementById('price-range').value);
-    const selectedBrand = document.getElementById('brand-select').value;
-    const selectedType = document.getElementById('type-select').value;
-    const selectedYearFrom = document.getElementById('year-from-select').value;
-    const selectedYearTo = document.getElementById('year-to-select').value;
-    const offersContainer = document.getElementById('offers-container');
+    const selectedPrice = parseInt(document.getElementById('zakres-cen').value);
+    const selectedBrand = document.getElementById('wybor-marki').value;
+    const selectedType = document.getElementById('wybor-typu').value;
+    const selectedYearFrom = document.getElementById('rok-od-wybor').value;
+    const selectedYearTo = document.getElementById('rok-do-wybor').value;
+    const offersContainer = document.getElementById('oferty-kontener');
     const offers = offersContainer.querySelectorAll('.offer');
 
     offers.forEach(offer => {
@@ -105,7 +105,7 @@ function filterOffers() {
 
 function loadOffers() {
     let offers = JSON.parse(localStorage.getItem('offers')) || [];
-    const offersContainer = document.getElementById('offers-container');
+    const offersContainer = document.getElementById('oferty-kontener');
     
     offersContainer.innerHTML = ''; // Ensure offersContainer is empty before adding new offers
 
