@@ -1,6 +1,16 @@
+
 DO DODANIA:
 - dodanie opcji ustawienia danej oferty przez administratora jako wynajęta
 - potestowanie i pozmienianie tak aby dodawało jedną oferte na raz
+
+# DO DODANIA:
+na sam koniec:
+- trzeba przejść przez kod i wyczyścić go ze zbędnych rzeczy oraz pozmieniać tak zeby nie wygladalo na chatgpt
+- dodać dokumentacje czyli opisać dokładnie co robią dane linijki kodu
+
+- menu zmienic wszedzie tak zeby jakos to wygladalo
+- footer zmienic wszedzie tak zeby był na dole strony po przescrollowaniu na dół a nie przyklejony na dole jak menu
+
 - mozna dać wspólny css do wszystkich stron i ewentualnie komentarzami oddzielić do której strony odnosi sie jakiś dodatkowy fragment kodu
 - w panelu administratora dodanie ułatwienia wpisywania oraz sprawdzanie czy dana wartość jest odpowiednią wartością
 
