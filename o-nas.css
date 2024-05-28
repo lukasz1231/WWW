@@ -6,11 +6,14 @@
 }
 
 body {
+    display: flex;
+    flex-direction: column;
     font-family: 'Arial', sans-serif;
     color: #000;
     background: #fff;
     margin: 0;
     padding: 0;
+    bottom: 0;
 }
 
 /* Stylowanie nagłówka */
@@ -64,59 +67,46 @@ header nav ul li a:hover {
 
 /* Stylowanie głównej sekcji */
 main {
-    position: relative;
-    flex-grow: 1;
     display: flex;
-    align-items: center; 
-    justify-content: top;
-    padding: 20px;
     flex-direction: column;
-    text-align: center; /* Center the text horizontally */
-    padding-top: 120px;
-}
-
-main .overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 110%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 1;
+    align-items: center;
+    justify-content: center;
+    padding: 100px 20px;
+    text-align: center;
 }
 
 main .content {
-    position: relative;
-    z-index: 2;
-    color: white;
+    max-width: 800px;
 }
 
 main .content .nazwa-firmy h1 {
-    font-family:'Trebuchet MS', sans-serif;
+    font-family: 'Trebuchet MS', sans-serif;
     font-size: 48px;
     font-weight: bold;
-    margin: 0;
+    margin-bottom: 20px;
 }
 
 main .content .opis p {
-    font-size: 24px;
-    margin: 10px 0 0 0;
+    font-size: 18px;
+    margin: 10px 0;
+    line-height: 1.6;
 }
 
 /* Stylowanie stopki */
 footer {
-    background-color: rgba(0, 0, 0, 0.7); /* Czarne tło z 50% przezroczystości */
-    color: white; /* Biały kolor tekstu */
-    text-align: center; /* Wycentruj tekst */
-    padding: 5px; /* Dodaj odstępy wewnątrz stopki */
-    position: relative; /* Pozycja relatywna, aby umieścić stopkę na dole ekranu */
-    z-index: 2; /* Ustaw z-index większy niż warstwa z overlayem */
-    width: 110%;
-    left: -100px;
+    background-color: rgba(0, 0, 0); 
+    color: white; 
+    position: absolute; /* narazie daje absolut i zawsze bedzie na dole strony bo nie wiem jak zrobic zeby faktycznie byl na dole*/
+    text-align: center; 
+    padding: 0px; 
+    bottom: 0px; 
+    width: 100%;
+    bottom: 0;
 }
 
 footer p {
     font-size: 14px;
+    margin: 0px 0;
 }
 
 /* Responsive adjustments */
@@ -141,7 +131,7 @@ footer p {
     }
 
     .opis p {
-        font-size: 18px;
+        font-size: 16px;
     }
 }
 
@@ -163,7 +153,6 @@ footer p {
     }
 
     .opis p {
-        font-size: 16px;
+        font-size: 14px;
     }
 }
-
