@@ -2,6 +2,8 @@ DO DODANIA:
 - dodanie opcji ustawienia danej oferty przez administratora jako wynajęta
 - potestowanie i pozmienianie tak aby dodawało jedną oferte na raz
 - mozna dać wspólny css do wszystkich stron i ewentualnie komentarzami oddzielić do której strony odnosi sie jakiś dodatkowy fragment kodu
+- w panelu administratora dodanie ułatwienia wpisywania oraz sprawdzanie czy dana wartość jest odpowiednią wartością
+
 
 w wynajem do dodania:
 - poprawienie ulozenia akordeonu(przycisku) z wysylaniem emaila jest krzywo troche
