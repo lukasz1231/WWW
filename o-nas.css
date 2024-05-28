@@ -23,7 +23,7 @@ header {
     align-items: center;
     background-color: rgba(0, 0, 0, 0.7);
     padding: 20px 20px;
-    position: fixed;
+    position: static;
     width: 100%;
     top: 0;
     z-index: 1000;
@@ -96,7 +96,7 @@ main .content .opis p {
 footer {
     background-color: rgba(0, 0, 0); 
     color: white; 
-    position: absolute; /* narazie daje absolut i zawsze bedzie na dole strony bo nie wiem jak zrobic zeby faktycznie byl na dole*/
+    position: static; 
     text-align: center; 
     padding: 0px; 
     bottom: 0px; 
