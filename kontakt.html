@@ -26,30 +26,44 @@
             <p><strong>Telefon:</strong> +48 123 456 789</p>
             <p><strong>Adres:</strong> ul. Transportowa 1, 00-000 Miasto</p>
         </section>
-
+    
         <section id="contact-form">
             <h2>Formularz kontaktowy</h2>
-            <form action="mailto:info@pbtrans.pl" method="post" enctype="text/plain">
+            <button id="show-form">Napisz do nas</button>
+            <form action="mailto:info@pbtrans.pl" method="post" enctype="text/plain" id="form-content" style="display:none;">
                 <label for="name">Imię i nazwisko:</label>
                 <input type="text" id="name" name="name" required>
-
+    
                 <label for="email">Twój email:</label>
                 <input type="email" id="email" name="email" required>
-
+    
                 <label for="subject">Temat:</label>
                 <input type="text" id="subject" name="subject">
-
+    
                 <label for="message">Treść wiadomości:</label>
                 <textarea id="message" name="message" rows="4" required></textarea>
-
+    
                 <button type="submit">Wyślij</button>
             </form>
         </section>
+        <section id="mapa">
+            <h2>Jak dojechać?</h2>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3666.7646630047043!2d23.1459021!3d53.1169824!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x471ffbfb9415aee5%3A0x1f6449ccc6c966f7!2sPolitechnika%20Bia%C5%82ostocka!5e1!3m2!1spl!2spl!4v1716933666051!5m2!1spl!2spl" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </section>
+
+        <section id="godziny-pracy">
+            <strong>Godziny pracy</strong>
+            <p>Poniedziałek-Piątek: 08:00 – 16:30</p>
+            <p>Sobota: Nieczynne</p>
+            <p>Niedziela: Nieczynne</p>
+        </section>
+
     </main>
 
     <footer>
         <p>&copy; 2024 PB TRANS. Wszelkie prawa zastrzeżone.</p>
         <p>Kontakt: info@pbtrans.pl | Tel: +48 123 456 789</p>
     </footer>
+    <script src="kontakt.js"></script>
 </body>
 </html>
