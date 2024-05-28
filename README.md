@@ -8,6 +8,8 @@ w wynajem do dodania:
 - poprawienie ulozenia akordeonu(przycisku) z wysylaniem emaila jest krzywo troche
 - naprawienie strony bo jak zescrollujesz do samego dolu to jakas kraksa powstala tam kilka stron sie naklada na siebie XDD
 
+w o nas do dodania:
+- zdjęcie
 ---------------------------------------------------------------------
 WYKONANA ROBOTA:
 
