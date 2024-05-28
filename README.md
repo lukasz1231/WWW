@@ -32,7 +32,8 @@ WYKONANA ROBOTA:
 - dodac filtry (zrobione, ewentualnie mozna dodac jeszcze wiecej opcji i popawic sie wygladem)
 - pasek menu, ktory nie bedzie sie przemieszczal wraz ze scrollowaniem (zrobione)
 - usunąłem w javascripcie możliwość wysyłania maila
--
+- naprawiony akordeon (zrobione)
+- dodanie wiekszej ilosci filtrow (zrobione, dodalem po roku produkcji filtracje)
 
 *O nas:
 - dodac zdjecie
@@ -52,5 +53,6 @@ WYKONANA ROBOTA:
 *Panel administratora
 - polaczyc go z wynajmem (zrobione)
 - dodanie opcji ustawienia danej oferty przez administratora jako wynajęta
-- potestowanie i pozmienianie tak aby dodawało jedną oferte na raz
+- potestowanie i pozmienianie tak aby dodawało jedną oferte na raz (zrobione)
 - dodanie sprawdzania czy podane wartości są poprawne (poprawny vin itd)
+  
