@@ -14,7 +14,7 @@ header {
     align-items: center;
     background-color: rgba(0, 0, 0, 0.7);
     padding: 20px 20px;
-    position: fixed;
+    position: static;
     width: 100%;
     top: 0;
     z-index: 1000;
@@ -125,7 +125,8 @@ main {
     padding: 10px;
     width: 100%;
     text-align: center;
-    border: none;
+    border: solid;
+    border-width: 1px;
     outline: none;
     transition: 0.4s;
 }
@@ -146,4 +147,124 @@ main {
     font-style: italic;
     font-weight: bold;
     
+}
+
+.email-form {
+    margin-top: 1em;
+    padding: 1em;
+    border-top: 1px solid #ddd;
+    text-align: left; /* Centrowanie zawartości */
+
+}
+
+.email-form h4 {
+    margin-bottom: 30px;
+}
+
+.email-form label {
+    display: block;
+    margin-bottom: 0.5em;
+    font-weight: bold;
+}
+
+.email-form input,
+.email-form textarea {
+    width: calc(100% - 20px); /* Szerokość - margines */
+    padding: 0.5em;
+    margin: 0 auto 1em; /* Margines ustawiony na auto, aby elementy były wyśrodkowane */
+    border: 1px solid #ddd;
+    border-radius: 3px;
+}
+
+.email-form button {
+    padding: 0.5em 1em;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.email-form button:hover {
+    background-color: #0056b3;
+}
+
+/* Akordeon dla formularza email */
+.email-form .accordion {
+    font-family: Arial, Helvetica;
+    font-weight: bold;
+    color: #000000;
+    cursor: pointer;
+    padding: 10px;
+    width: 100%;
+    text-align: center;
+    border: solid;
+    border-width: 1px;
+    outline: none;
+    transition: 0.4s;
+    margin-bottom: 10px; /* Dodanie marginesu */
+}
+
+.email-form .accordion.active, .email-form .accordion:hover {
+    background-color: #ccc;
+}
+
+.email-form .panel {
+    padding: 0 18px;
+    display: none;
+    background-color: white;
+    overflow: hidden;
+}
+
+
+/* Stylowanie filtrów */
+#filters {
+    padding: 15px;
+    border-radius: 8px;
+    background-color: #f8f9fa;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center; /* Centrowanie zawartości */
+}
+
+#filters h2 {
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+    color: #333;
+}
+
+#filters label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #555;
+}
+
+#price-label {
+    margin: 0 auto 10px; /* Przesunięcie ceny bliżej suwaka */
+    font-weight: bold;
+    color: #555;
+}
+
+#filters input[type="range"],
+#filters select,
+#filters button {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px; /* Większy margines */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+#filters button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#filters button:hover {
+    background-color: #0056b3;
 }
