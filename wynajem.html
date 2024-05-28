@@ -20,7 +20,32 @@
     </header>
 
     <main>
-        <div class="offer">
+        <section id="filters">
+            <h2>Filtruj oferty</h2>
+            <form id="filter-form">
+                <label for="price-range">Cena (zł/miesiąc):</label>
+                <input type="range" id="price-range" name="price" min="0" max="10000" step="250" value="10000" oninput="updatePriceLabel(this.value)">
+                <span id="price-label">10000 zł</span>
+
+                <label for="brand-select">Marka:</label>
+                <select id="brand-select" name="brand">
+                    <option value="all">Wszystkie</option>
+                    <option value="Wielton">Wielton</option>
+                    <option value="Krone">Krone</option>
+                </select>
+
+                <label for="type-select">Typ naczepy:</label>
+                <select id="type-select" name="type">
+                    <option value="all">Wszystkie</option>
+                    <option value="Platforma">Platforma</option>
+                    <option value="Chłodnia">Chłodnia</option>
+                </select>
+            </form>
+        </section>
+
+        <div id="offers-container">
+            <!-- Tutaj będą wczytywane oferty -->
+            <div class="offer" data-price="3500" data-brand="Wielton" data-type="Platforma">
             <div class="carousel" id="carousel1">
                 <button class="prev" onclick="changeSlide(-1, 'carousel1')">&#10094;</button>
                 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzVGIdUCh1hcsLtF_8B9MSrVWmz5kCJFVdaA&usqp=CAU" alt="Oferta 1" class="slide active">
@@ -36,9 +61,22 @@
                 <p><strong>VIN:</strong> WIELTON00000012345</p>
                 <p><strong>Typ naczepy:</strong> Platforma</p>
             </div>
-        </div>
+            <div class="email-form">
+                <h4 class="accordion">Skontaktuj się z nami i wynajmij naczepę już dziś:</h4>
+                <div class="panel">
+                    <form action="mailto:pbtrans@gmail.com" method="post" enctype="text/plain">
+                        <label for="email">Twój email:</label>
+                        <input type="email" id="email" name="email" required>
+                        <label for="temat">Temat:</label>
+                        <input type="text" id="temat" name="temat">
+                        <label for="message">Treść wiadomości:</label>
+                        <textarea id="message" name="message" rows="4" required></textarea>
+                        <button type="submit">Wyślij</button>
+                    </form>
+                </div>
+            </div>
         
-        <div class="offer">
+        <div class="offer" data-price="4500" data-brand="Krone" data-type="Chłodnia">
             <div class="carousel" id="carousel2">
                 <button class="prev" onclick="changeSlide(-1, 'carousel2')">&#10094;</button>
                 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzVGIdUCh1hcsLtF_8B9MSrVWmz5kCJFVdaA&usqp=CAU" alt="Oferta 1" class="slide active">
@@ -54,6 +92,113 @@
                 <p><strong>VIN:</strong> KRONE343254543</p>
                 <p><strong>Typ naczepy:</strong> Chłodnia</p>
             </div>
+            <div class="email-form">
+                <h4 class="accordion">Skontaktuj się z nami i wynajmij naczepę już dziś:</h4>
+                <div class="panel">
+                    <form action="mailto:pbtrans@gmail.com" method="post" enctype="text/plain">
+                        <label for="email">Twój email:</label>
+                        <input type="email" id="email" name="email" required>
+                        <label for="temat">Temat:</label>
+                        <input type="text" id="temat" name="temat">
+                        <label for="message">Treść wiadomości:</label>
+                        <textarea id="message" name="message" rows="4" required></textarea>
+                        <button type="submit">Wyślij</button>
+                    </form>
+                </div>
+            </div>            
+
+        <div class="offer" data-price="3500" data-brand="Wielton" data-type="Platforma">
+            <div class="carousel" id="carousel2">
+                <button class="prev" onclick="changeSlide(-1, 'carousel2')">&#10094;</button>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzVGIdUCh1hcsLtF_8B9MSrVWmz5kCJFVdaA&usqp=CAU" alt="Oferta 1" class="slide active">
+                <img src="https://comparic.pl/wp-content/uploads/2018/11/wielton.jpg" alt="Oferta 2" class="slide">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRh89pxxbxlOcsWjhouqOT9lq0sPJL3_CedlGgIlDykp87A5atjO17ZTqBKqzqWCahOkXw&usqp=CAU" alt="Oferta 3" class="slide">
+                <button class="next" onclick="changeSlide(1, 'carousel2')">&#10095;</button>
+            </div>
+            <p class="cena">Cena: 4500zł + VAT/miesiąc</p>
+            <button class="accordion">OPIS</button>
+            <div class="panel">
+                <p><strong>Marka:</strong> Krone</p>
+                <p><strong>Rok produkcji:</strong> 2021</p>
+                <p><strong>VIN:</strong> KRONE343254543</p>
+                <p><strong>Typ naczepy:</strong> Chłodnia</p>
+            </div>
+            <div class="email-form">
+                <h4 class="accordion">Skontaktuj się z nami i wynajmij naczepę już dziś:</h4>
+                <div class="panel">
+                    <form action="mailto:pbtrans@gmail.com" method="post" enctype="text/plain">
+                        <label for="email">Twój email:</label>
+                        <input type="email" id="email" name="email" required>
+                        <label for="temat">Temat:</label>
+                        <input type="text" id="temat" name="temat">
+                        <label for="message">Treść wiadomości:</label>
+                        <textarea id="message" name="message" rows="4" required></textarea>
+                        <button type="submit">Wyślij</button>
+                    </form>
+                </div>
+            </div>            
+
+        <div class="offer" data-price="3500" data-brand="Wielton" data-type="Platforma">
+            <div class="carousel" id="carousel2">
+                <button class="prev" onclick="changeSlide(-1, 'carousel2')">&#10094;</button>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzVGIdUCh1hcsLtF_8B9MSrVWmz5kCJFVdaA&usqp=CAU" alt="Oferta 1" class="slide active">
+                <img src="https://comparic.pl/wp-content/uploads/2018/11/wielton.jpg" alt="Oferta 2" class="slide">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRh89pxxbxlOcsWjhouqOT9lq0sPJL3_CedlGgIlDykp87A5atjO17ZTqBKqzqWCahOkXw&usqp=CAU" alt="Oferta 3" class="slide">
+                <button class="next" onclick="changeSlide(1, 'carousel2')">&#10095;</button>
+            </div>
+            <p class="cena">Cena: 4500zł + VAT/miesiąc</p>
+            <button class="accordion">OPIS</button>
+            <div class="panel">
+                <p><strong>Marka:</strong> Krone</p>
+                <p><strong>Rok produkcji:</strong> 2021</p>
+                <p><strong>VIN:</strong> KRONE343254543</p>
+                <p><strong>Typ naczepy:</strong> Chłodnia</p>
+            </div>
+            <div class="email-form">
+                <h4 class="accordion">Skontaktuj się z nami i wynajmij naczepę już dziś:</h4>
+                <div class="panel">
+                    <form action="mailto:pbtrans@gmail.com" method="post" enctype="text/plain">
+                        <label for="email">Twój email:</label>
+                        <input type="email" id="email" name="email" required>
+                        <label for="temat">Temat:</label>
+                        <input type="text" id="temat" name="temat">
+                        <label for="message">Treść wiadomości:</label>
+                        <textarea id="message" name="message" rows="4" required></textarea>
+                        <button type="submit">Wyślij</button>
+                    </form>
+                </div>
+            </div>            
+
+        <div class="offer" data-price="3500" data-brand="Wielton" data-type="Platforma">
+            <div class="carousel" id="carousel2">
+                <button class="prev" onclick="changeSlide(-1, 'carousel2')">&#10094;</button>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzVGIdUCh1hcsLtF_8B9MSrVWmz5kCJFVdaA&usqp=CAU" alt="Oferta 1" class="slide active">
+                <img src="https://comparic.pl/wp-content/uploads/2018/11/wielton.jpg" alt="Oferta 2" class="slide">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRh89pxxbxlOcsWjhouqOT9lq0sPJL3_CedlGgIlDykp87A5atjO17ZTqBKqzqWCahOkXw&usqp=CAU" alt="Oferta 3" class="slide">
+                <button class="next" onclick="changeSlide(1, 'carousel2')">&#10095;</button>
+            </div>
+            <p class="cena">Cena: 4500zł + VAT/miesiąc</p>
+            <button class="accordion">OPIS</button>
+            <div class="panel">
+                <p><strong>Marka:</strong> Krone</p>
+                <p><strong>Rok produkcji:</strong> 2021</p>
+                <p><strong>VIN:</strong> KRONE343254543</p>
+                <p><strong>Typ naczepy:</strong> Chłodnia</p>
+            </div>
+            <div class="email-form">
+                <h4 class="accordion">Skontaktuj się z nami i wynajmij naczepę już dziś:</h4>
+                <div class="panel">
+                    <form action="mailto:pbtrans@gmail.com" method="post" enctype="text/plain">
+                        <label for="email">Twój email:</label>
+                        <input type="email" id="email" name="email" required>
+                        <label for="temat">Temat:</label>
+                        <input type="text" id="temat" name="temat">
+                        <label for="message">Treść wiadomości:</label>
+                        <textarea id="message" name="message" rows="4" required></textarea>
+                        <button type="submit">Wyślij</button>
+                    </form>
+                </div>
+            </div>            
 
             <!-- wiecej ofert dodajemy w ten sam sposob kopiujac ten kod-->
     </main>
