@@ -3,21 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="o-nas.css">
+    <link rel="stylesheet" href="kontakt.css">
     <title>Kontakt</title>
 </head>
 <body>
     <header>
-
         <nav>
             <ul>
-                <li><a href=glowna.html class="logo"><img src="https://img.freepik.com/premium-vector/freight-truck-line-art-illustration-box-truck-vector-icon-dark-background_23758-1180.jpg" alt="Logo firmy"></a></li>
+                <li><a href="glowna.html" class="logo"><img src="https://img.freepik.com/premium-vector/freight-truck-line-art-illustration-box-truck-vector-icon-dark-background_23758-1180.jpg" alt="Logo firmy"></a></li>
                 <li><a href="wynajem.html">Wynajem</a></li>
                 <li><a href="o-nas.html">O Nas</a></li>
                 <li><a href="kontakt.html">Kontakt</a></li>
             </ul>
         </nav>
     </header>
+
+    <main>
+        <section id="contact-info">
+            <h2>Kontakt</h2>
+            <p>Jeśli masz jakiekolwiek pytania lub chcesz uzyskać więcej informacji na temat naszej oferty, skontaktuj się z nami:</p>
+            <p><strong>Email:</strong> info@pbtrans.pl</p>
+            <p><strong>Telefon:</strong> +48 123 456 789</p>
+            <p><strong>Adres:</strong> ul. Transportowa 1, 00-000 Miasto</p>
+        </section>
+
+        <section id="contact-form">
+            <h2>Formularz kontaktowy</h2>
+            <form action="mailto:info@pbtrans.pl" method="post" enctype="text/plain">
+                <label for="name">Imię i nazwisko:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Twój email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="subject">Temat:</label>
+                <input type="text" id="subject" name="subject">
+
+                <label for="message">Treść wiadomości:</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+
+                <button type="submit">Wyślij</button>
+            </form>
+        </section>
+    </main>
 
     <footer>
         <p>&copy; 2024 PB TRANS. Wszelkie prawa zastrzeżone.</p>
