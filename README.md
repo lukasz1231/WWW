@@ -1,6 +1,8 @@
 DO DODANIA:
 
 menu zmienic wszedzie tak zeby jakos to wygladalo
+footer zmienic wszedzie tak zeby był na dole strony po przescrollowaniu na dół a nie przyklejony na dole jak menu
+mozna dać wspólny css do wszystkich stron i ewentualnie komentarzami oddzielić do której strony odnosi sie jakiś dodatkowy fragment kodu
 
 
 *Strona głowna:
