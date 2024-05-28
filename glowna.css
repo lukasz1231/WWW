@@ -9,19 +9,20 @@ body {
     background-size: cover;
     overflow: hidden;
 }
-
+/* Stylowanie nagłówka */
 header {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgba(0, 0, 0, 0.7); /* Black color with transparency */
+    background-color: rgba(0, 0, 0, 0.7);
     padding: 20px 20px;
-    position: relative;
-    z-index: 2;
+    position: fixed;
     width: 100%;
+    top: 0;
+    z-index: 1000;
 }
 
-.logo {
+header .logo {
     top: 0px;
     position: absolute;
     left: 0px;
@@ -29,11 +30,11 @@ header {
     
 }
 
-.logo img {
+header .logo img {
     height: 60px;
 }
 
-nav ul {
+header nav ul {
     list-style-type: none;
     margin: 0;
     padding: 10px;
@@ -41,19 +42,20 @@ nav ul {
     gap: 20px;
 }
 
-nav ul li {
+header nav ul li {
     display: inline;
+    
 }
 
-nav ul li a {
+header nav ul li a {
+    color: #fff;
     text-decoration: none;
-    color: white;
     padding: 30px 20px;
 }
 
-nav ul li a:hover {
+header nav ul li a:hover {
     background-color: #333;
-    color: #fff;
+    color: #ddd;
 }
 
 main {
@@ -104,7 +106,7 @@ footer {
     position: relative; /* Pozycja relatywna, aby umieścić stopkę na dole ekranu */
     z-index: 2; /* Ustaw z-index większy niż warstwa z overlayem */
     width: 110%;
-    left: -100px;
+
 }
 
 
