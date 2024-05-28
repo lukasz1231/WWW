@@ -1,12 +1,11 @@
 DO DODANIA:
-
-- menu zmienic wszedzie tak zeby jakos to wygladalo
-- footer zmienic wszedzie tak zeby był na dole strony po przescrollowaniu na dół a nie przyklejony na dole jak menu
+- dodanie opcji ustawienia danej oferty przez administratora jako wynajęta
+- potestowanie i pozmienianie tak aby dodawało jedną oferte na raz
 - mozna dać wspólny css do wszystkich stron i ewentualnie komentarzami oddzielić do której strony odnosi sie jakiś dodatkowy fragment kodu
 
 w wynajem do dodania:
 - poprawienie ulozenia akordeonu(przycisku) z wysylaniem emaila jest krzywo troche
-- naprawienie strony bo jak zescrollujesz do samego dolu to jakas kraksa powstala tam kilka stron sie naklada na siebie XDD
+
 
 w o nas do dodania:
 - zdjęcie
@@ -44,6 +43,6 @@ WYKONANA ROBOTA:
 -
 
 *Panel administratora
-- polaczyc go z wynajmem
+- polaczyc go z wynajmem (zrobione)
 -
 -
