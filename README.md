@@ -11,11 +11,8 @@ na sam koniec:
 
 
 w wynajem do dodania:
-- poprawienie ulozenia akordeonu(przycisku) z wysylaniem emaila jest krzywo troche
+- przycisk z wysylaniem emaila jest krzywo troche 
 
-
-w o nas do dodania:
-- zdjęcie
 ---------------------------------------------------------------------
 WYKONANA ROBOTA:
 
@@ -36,17 +33,17 @@ WYKONANA ROBOTA:
 - dodanie wiekszej ilosci filtrow (zrobione, dodalem po roku produkcji filtracje)
 
 *O nas:
-- dodac zdjecie
+- dodac mape (zrobione)
 - mozna jakoś uładnić
--
+- dodanie godziny pracy (zrobione)
 -
 -
 -
 
 *Kontakt:
 - można jakoś uładnić
--
--
+- akordeon na przycisk do kontaktu - (zrobione)
+- dodanie mapy - jak dojechac (zrobione)
 -
 -
 
