@@ -1,4 +1,7 @@
-DO DODANIA:
+# DO DODANIA:
+na sam koniec:
+- trzeba przejść przez kod i wyczyścić go ze zbędnych rzeczy oraz pozmieniać tak zeby nie wygladalo na chatgpt
+- dodać dokumentacje czyli opisać dokładnie co robią dane linijki kodu
 
 - menu zmienic wszedzie tak zeby jakos to wygladalo
 - footer zmienic wszedzie tak zeby był na dole strony po przescrollowaniu na dół a nie przyklejony na dole jak menu
