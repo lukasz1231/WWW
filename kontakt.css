@@ -58,44 +58,44 @@ main {
     padding: 20px;
 }
 
-#contact-info {
+#info-kontakt {
     margin-bottom: 40px;
 }
 
-#contact-info h2 {
+#info-kontakt h2 {
     font-size: 24px;
     margin-bottom: 10px;
 }
 
-#contact-info p {
+#info-kontakt p {
     font-size: 16px;
     line-height: 1.5;
 }
 
-#contact-form h2 {
+#formularz-kontaktowy h2 {
     font-size: 24px;
     margin-bottom: 20px;
 }
 
-#contact-form form {
+#formularz-kontaktowy form {
     display: flex;
     flex-direction: column;
 }
 
-#contact-form label {
+#formularz-kontaktowy label {
     margin-bottom: 5px;
     font-weight: bold;
 }
 
-#contact-form input,
-#contact-form textarea {
+#formularz-kontaktowy input,
+#formularz-kontaktowy textarea {
     margin-bottom: 20px;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
 }
 
-#contact-form button {
+#formularz-kontaktowy button {
     padding: 10px 20px;
     background-color: rgba(0, 0, 0, 0.7);
     color: #fff;
@@ -105,7 +105,7 @@ main {
     font-size: 16px;
 }
 
-#contact-form button:hover {
+#formularz-kontaktowy button:hover {
     background-color: rgba(0, 0, 0, 0.9);
 }
 
@@ -127,12 +127,12 @@ footer p {
 }
 
 /* Stylowanie formularza kontaktowego */
-#contact-form form {
+#formularz-kontaktowy form {
     display: none; /* Domyślnie ukrywamy formularz */
 }
 
-#contact-form input,
-#contact-form textarea {
+#formularz-kontaktowy input,
+#formularz-kontaktowy textarea {
     margin-bottom: 20px;
     padding: 10px;
     border: 1px solid #ccc;
@@ -140,13 +140,13 @@ footer p {
     width: calc(100% - 22px); /* Ustawiamy szerokość na 100% minus padding */
 }
 
-#contact-form button {
+#formularz-kontaktowy button {
     padding: 8px 15px; /* Zmniejszamy padding przycisku */
     font-size: 14px; /* Zmniejszamy rozmiar czcionki */
     margin-bottom: 20px;
 }
 
-#contact-form button:hover {
+#formularz-kontaktowy button:hover {
     background-color: rgba(0, 0, 0, 0.9);
 }
 

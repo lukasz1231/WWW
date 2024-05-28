@@ -217,7 +217,7 @@ main {
 
 
 /* Stylowanie filtrów */
-#filters {
+#filtry {
     padding: 15px;
     border-radius: 8px;
     background-color: #f8f9fa;
@@ -225,28 +225,28 @@ main {
     text-align: center; /* Centrowanie zawartości */
 }
 
-#filters h2 {
+#filtry h2 {
     margin-bottom: 10px;
     font-size: 1.2rem;
     color: #333;
 }
 
-#filters label {
+#filtry label {
     display: block;
     margin-bottom: 5px;
     font-weight: bold;
     color: #555;
 }
 
-#price-label {
+#etykieta-ceny {
     margin: 0 auto 10px; /* Przesunięcie ceny bliżej suwaka */
     font-weight: bold;
     color: #555;
 }
 
-#filters input[type="range"],
-#filters select,
-#filters button {
+#filtry input[type="range"],
+#filtry select,
+#filtry button {
     width: 100%;
     padding: 8px;
     margin-bottom: 10px; /* Większy margines */
@@ -256,7 +256,7 @@ main {
     color: #555;
 }
 
-#filters button {
+#filtry button {
     background-color: #007bff;
     color: #fff;
     border: none;
@@ -264,25 +264,25 @@ main {
     transition: background-color 0.3s;
 }
 
-#filters button:hover {
+#filtry button:hover {
     background-color: #0056b3;
 }
 
 /* Nowy styl dla wyboru lat produkcji */
-#year-range-container {
+#zakres-roku-kontener {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-bottom: 10px;
 }
 
-#year-range-container label {
+#zakres-roku-kontener label {
     margin-bottom: 5px;
     font-weight: bold;
     color: #555;
 }
 
-#year-range-container select {
+#zakres-roku-kontener select {
     width: 48%;
 }
 
