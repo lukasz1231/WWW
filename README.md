@@ -1,7 +1,7 @@
 # DO DODANIA:
 na sam koniec:
 - trzeba przejść przez kod i wyczyścić go ze zbędnych rzeczy oraz pozmieniać tak zeby nie wygladalo na chatgpt
-- spolszczenie kodu (w 70% zrobione)
+- spolszczenie kodu (w 60% zrobione, wszystkie oprocz "klas" wynajem i panel-administratora)
 - dodać dokumentacje czyli opisać dokładnie co robią dane linijki kodu
 
 - menu zmienic wszedzie tak zeby jakos to wygladalo
