@@ -19,30 +19,30 @@
     </header>
 
     <main>
-        <section id="filtry">
+        <section id="filters">
             <h2>Filtruj oferty</h2>
-            <form id="formularz-filtrow">
-                <label for="zakres-cen">Cena (zł/miesiąc):</label>
-                <input type="range" id="zakres-cen" name="price" min="0" max="10000" step="250" value="10000" oninput="updatePriceLabel(this.value)">
-                <span id="etykieta-ceny">10000 zł</span>
+            <form id="filter-form">
+                <label for="price-range">Cena (zł/miesiąc):</label>
+                <input type="range" id="price-range" name="price" min="0" max="10000" step="250" value="10000" oninput="updatePriceLabel(this.value)">
+                <span id="price-label">10000 zł</span>
 
-                <label for="wybor-marki">Marka:</label>
-                <select id="wybor-marki" name="brand">
+                <label for="brand-select">Marka:</label>
+                <select id="brand-select" name="brand">
                     <option value="all">Dowolna</option>
                     <option value="Wielton">Wielton</option>
                     <option value="Krone">Krone</option>
                 </select>
 
-                <label for="wybor-typu">Typ naczepy:</label>
-                <select id="wybor-typu" name="type">
+                <label for="type-select">Typ naczepy:</label>
+                <select id="type-select" name="type">
                     <option value="all">Dowolny</option>
                     <option value="Platforma">Platforma</option>
                     <option value="Chłodnia">Chłodnia</option>
                 </select>
                 
-                <div id="zakres-roku-kontener">
-                    <label for="rok-od-wybor">Rok produkcji od:</label>
-                    <select id="rok-od-wybor" name="rok-od">
+                <div id="year-range-container">
+                    <label for="year-from-select">Rok produkcji od:</label>
+                    <select id="year-from-select" name="year-from">
                         <option value="all">Dowolny</option>
                         <option value="2023">2023</option>
                         <option value="2022">2022</option>
@@ -82,8 +82,8 @@
                         <!-- Dodaj inne lata w razie potrzeby -->
                     </select>
 
-                    <label for="rok-do-wybor">Rok produkcji do:</label>
-                    <select id="rok-do-wybor" name="rok-do">
+                    <label for="year-to-select">Rok produkcji do:</label>
+                    <select id="year-to-select" name="year-to">
                         <option value="all">Dowolny</option>
                         <option value="2023">2023</option>
                         <option value="2022">2022</option>
@@ -125,7 +125,7 @@
             </form>
         </section>
 
-        <div id="oferty-kontener">
+        <div id="offers-container">
             <!-- Tutaj będą wczytywane oferty -->
         </div>
     </main>

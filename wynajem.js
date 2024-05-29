@@ -7,20 +7,26 @@ function initializeCarousels() {
     const carousels = document.querySelectorAll('.carousel');
     carousels.forEach(carousel => {
         let slides = carousel.getElementsByClassName('slide');
-        slides[0].classList.add('active');
-        carousel.dataset.currentSlide = 0;
+        if (slides.length > 0) {
+            slides[0].classList.add('active');
+            carousel.dataset.currentSlide = 0;
+        }
     });
 }
 
 function changeSlide(n, carouselId) {
     const carousel = document.getElementById(carouselId);
-    const slides = carousel.getElementsByClassName('slide');
-    let currentSlide = parseInt(carousel.dataset.currentSlide);
+    if (carousel) {
+        const slides = carousel.getElementsByClassName('slide');
+        let currentSlide = parseInt(carousel.dataset.currentSlide) || 0;
 
-    slides[currentSlide].classList.remove('active');
-    currentSlide = (currentSlide + n + slides.length) % slides.length;
-    slides[currentSlide].classList.add('active');
-    carousel.dataset.currentSlide = currentSlide;
+        if (slides.length > 0) {
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (currentSlide + n + slides.length) % slides.length;
+            slides[currentSlide].classList.add('active');
+            carousel.dataset.currentSlide = currentSlide;
+        }
+    }
 }
 
 function initializeAccordions() {
@@ -39,36 +45,38 @@ function initializeAccordions() {
 }
 
 function updatePriceLabel(value) {
-    document.getElementById('etykieta-ceny').textContent = `${value} zł`;
+    document.getElementById('price-label').textContent = `${value} zł`;
 }
 
 function initializeFilters() {
-    const priceRange = document.getElementById('zakres-cen');
-    const brandSelect = document.getElementById('wybor-marki');
-    const typeSelect = document.getElementById('wybor-typu');
-    const yearFromSelect = document.getElementById('rok-od-wybor');
-    const yearToSelect = document.getElementById('rok-do-wybor');
+    const priceRange = document.getElementById('price-range');
+    const brandSelect = document.getElementById('brand-select');
+    const typeSelect = document.getElementById('type-select');
+    const yearFromSelect = document.getElementById('year-from-select');
+    const yearToSelect = document.getElementById('year-to-select');
 
-    priceRange.addEventListener('input', () => {
-        updatePriceLabel(priceRange.value);
-        filterOffers();
-    });
+    if (priceRange && brandSelect && typeSelect && yearFromSelect && yearToSelect) {
+        priceRange.addEventListener('input', () => {
+            updatePriceLabel(priceRange.value);
+            filterOffers();
+        });
 
-    brandSelect.addEventListener('change', filterOffers);
-    typeSelect.addEventListener('change', filterOffers);
-    yearFromSelect.addEventListener('change', filterOffers);
-    yearToSelect.addEventListener('change', filterOffers);
+        brandSelect.addEventListener('change', filterOffers);
+        typeSelect.addEventListener('change', filterOffers);
+        yearFromSelect.addEventListener('change', filterOffers);
+        yearToSelect.addEventListener('change', filterOffers);
+    }
 
     filterOffers();
 }
 
 function filterOffers() {
-    const selectedPrice = parseInt(document.getElementById('zakres-cen').value);
-    const selectedBrand = document.getElementById('wybor-marki').value;
-    const selectedType = document.getElementById('wybor-typu').value;
-    const selectedYearFrom = document.getElementById('rok-od-wybor').value;
-    const selectedYearTo = document.getElementById('rok-do-wybor').value;
-    const offersContainer = document.getElementById('oferty-kontener');
+    const selectedPrice = parseInt(document.getElementById('price-range').value);
+    const selectedBrand = document.getElementById('brand-select').value;
+    const selectedType = document.getElementById('type-select').value;
+    const selectedYearFrom = document.getElementById('year-from-select').value;
+    const selectedYearTo = document.getElementById('year-to-select').value;
+    const offersContainer = document.getElementById('offers-container');
     const offers = offersContainer.querySelectorAll('.offer');
 
     offers.forEach(offer => {
@@ -105,7 +113,7 @@ function filterOffers() {
 
 function loadOffers() {
     let offers = JSON.parse(localStorage.getItem('offers')) || [];
-    const offersContainer = document.getElementById('oferty-kontener');
+    const offersContainer = document.getElementById('offers-container');
     
     offersContainer.innerHTML = ''; // Ensure offersContainer is empty before adding new offers
 
@@ -122,9 +130,9 @@ function loadOffers() {
         offerElement.innerHTML = `
             <div class="carousel" id="${carouselId}">
                 <button class="prev" onclick="changeSlide(-1, '${carouselId}')">&#10094;</button>
-                ${offer.images.map((img, idx) => `
+                ${offer.images && Array.isArray(offer.images) ? offer.images.map((img, idx) => `
                     <img src="${img.trim()}" alt="Oferta ${idx + 1}" class="slide ${idx === 0 ? 'active' : ''}">
-                `).join('')}
+                `).join('') : ''}
                 <button class="next" onclick="changeSlide(1, '${carouselId}')">&#10095;</button>
             </div>
             <p class="cena">Cena: ${offer.price}zł + VAT/miesiąc</p>
