@@ -1,22 +1,22 @@
-document.getElementById('dodaj-oferte-formularz').addEventListener('submit', function(event) {
+document.getElementById('add-offer-form').addEventListener('submit', function(event) {
     event.preventDefault();
 
     // Pobranie danych z formularza
-    const marka = document.getElementById('marka').value;
-    const typ = document.getElementById('typ').value;
-    const cena = document.getElementById('cena').value;
-    const rok = document.getElementById('rok').value;
+    const brand = document.getElementById('brand').value;
+    const type = document.getElementById('type').value;
+    const price = document.getElementById('price').value;
+    const year = document.getElementById('year').value;
     const vin = document.getElementById('vin').value;
-    const zdjecia = document.getElementById('zdjecia').value.split(',');
+    const images = document.getElementById('images').value.split(',');
 
     // Utworzenie nowego ogłoszenia jako obiekt
     const newOffer = {
-        marka,
-        typ,
-        cena,
-        rok,
+        brand,
+        type,
+        price,
+        year,
         vin,
-        zdjecia
+        images
     };
 
     // Przechowywanie ogłoszenia w localStorage
@@ -25,7 +25,15 @@ document.getElementById('dodaj-oferte-formularz').addEventListener('submit', fun
     localStorage.setItem('offers', JSON.stringify(offers));
 
     // Resetowanie formularza
-    document.getElementById('dodaj-oferte-formularz').reset();
+    document.getElementById('add-offer-form').reset();
 
     alert('Ogłoszenie zostało dodane pomyślnie!');
+});
+
+// Dodajemy obsługę kliknięcia przycisku "Wyczyść"
+document.getElementById('clear-offers-button').addEventListener('click', function() {
+    // Usuwamy wszystkie ogłoszenia z localStorage
+    localStorage.removeItem('offers');
+    // Informujemy użytkownika o sukcesie
+    alert('Wszystkie ogłoszenia zostały usunięte.');
 });
