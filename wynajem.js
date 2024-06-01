@@ -144,9 +144,9 @@ function loadOffers() {
                 <p><strong>Typ naczepy:</strong> ${offer.type}</p>
             </div>
             <div class="email-form">
-                <h4 class="accordion">Skontaktuj się z nami i wynajmij naczepę już dziś:</h4>
+                <button class="accordion">Skontaktuj się z nami i wynajmij naczepę już dziś:</button>
                 <div class="panel">
-                    <form action="mailto:pbtrans@gmail.com" method="post" enctype="text/plain">
+                     <form action="mailto:pbtrans@gmail.com" method="post" enctype="text/plain">
                         <label for="email">Twój email:</label>
                         <input type="email" id="email" name="email" required>
                         <label for="temat">Temat:</label>
@@ -157,6 +157,7 @@ function loadOffers() {
                     </form>
                 </div>
             </div>
+
         `;
         
         offersContainer.appendChild(offerElement);
@@ -164,4 +165,34 @@ function loadOffers() {
 
     initializeCarousels();
     initializeAccordions();
+}
+function toggleDarkMode() {
+    const body = document.body;
+    const header = document.querySelector('header');
+    const footer = document.querySelector('footer');
+    const main = document.querySelector('main');
+    const filters = document.getElementById('filters');
+    const contactButton = document.querySelector('.email-form button');
+    
+    // Zmiana koloru tła i koloru tekstu dla body, header, footer i main
+    body.classList.toggle('dark-mode');
+    header.classList.toggle('dark-mode');
+    footer.classList.toggle('dark-mode');
+    main.classList.toggle('dark-mode');
+    filters.classList.toggle('dark-mode'); // Dodaj lub usuń klasę 'dark-mode' dla filtrów
+    
+    // Zmiana koloru tekstu dla linków w menu
+    const links = document.querySelectorAll('header nav ul li a');
+    links.forEach(link => {
+        link.classList.toggle('dark-mode');
+    });
+
+    // Zmiana koloru tła i koloru tekstu dla przycisków w menu
+    const buttons = document.querySelectorAll('header nav ul li button');
+    buttons.forEach(button => {
+        button.classList.toggle('dark-mode');
+    });
+
+    // Zmiana koloru tła i koloru tekstu dla przycisku skontaktuj się z nami
+    contactButton.classList.toggle('dark-mode');
 }
