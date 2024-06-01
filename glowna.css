@@ -9,7 +9,6 @@ body {
     background-size: cover;
     overflow: hidden;
 }
-/* Stylowanie nagłówka */
 header {
     display: flex;
     justify-content: center;
@@ -66,7 +65,7 @@ main {
     justify-content: top;
     padding: 20px;
     flex-direction: column;
-    text-align: center; /* Center the text horizontally */
+    text-align: center; 
     padding-top: 120px;
 }
 
@@ -95,17 +94,17 @@ main {
 
 .opis p {
     font-size: 24px;
-    margin: 10px 0 0 0; /* Add some margin on top for spacing */
+    margin: 10px 0 0 0; 
 }
 
 footer {
-    background-color: rgba(0, 0, 0, 0.7); /* Czarne tło z 50% przezroczystości */
-    color: white; /* Biały kolor tekstu */
-    text-align: center; /* Wycentruj tekst */
-    padding: 0px; /* Dodaj odstępy wewnątrz stopki */
-    position: relative; /* Pozycja relatywna, aby umieścić stopkę na dole ekranu */
+    background-color: rgba(0, 0, 0, 0.7); 
+    color: white; 
+    text-align: center; 
+    padding: 0px; 
+    position: relative; 
     bottom: 0px;
-    z-index: 2; /* Ustaw z-index większy niż warstwa z overlayem */
+    z-index: 2; 
     width: 100%;
 
 }
@@ -117,7 +116,6 @@ footer p {
 
 
 
-/* Responsive adjustments */
 @media (max-width: 768px) {
     header {
         flex-direction: column;
