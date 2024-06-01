@@ -1,4 +1,3 @@
-
 body {
     font-family: 'Arial', sans-serif;
     color: #000;
@@ -7,25 +6,25 @@ body {
     padding: 0;
 }
 
-/* Stylowanie nagłówka */
 header {
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: rgba(0, 0, 0, 0.7);
-    padding: 20px 0px;
-    position: static;
+    padding: 20px 0;
+    position: fixed;
     width: 100%;
     top: 0;
     z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 header .logo {
-    top: 0px;
     position: absolute;
-    left: 0px;
-    padding: 7px 10px; 
-    
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 0;
 }
 
 header .logo img {
@@ -42,26 +41,29 @@ header nav ul {
 
 header nav ul li {
     display: inline;
-    
 }
 
 header nav ul li a {
     color: #fff;
     text-decoration: none;
-    padding: 30px 20px;
+    padding: 10px 20px;
+    transition: background-color 0.3s, color 0.3s;
 }
 
 header nav ul li a:hover {
     background-color: #333;
     color: #ddd;
+    border-radius: 5px;
 }
 
 h1 {
     margin: 0;
 }
 
-main {
+main 
+{
     padding: 1em;
+    margin-top: 100px;
 }
 
 .offer {
@@ -116,7 +118,6 @@ main {
     background-color: rgba(0, 0, 0, 0.8);
 }
 
-/* Akordeon styl */
 .accordion {
     font-family: Arial, Helvetica;
     font-weight: bold;
@@ -146,14 +147,13 @@ main {
     font-family: Franklin Gothic Medium, Arial;
     font-style: italic;
     font-weight: bold;
-    
 }
+
 .email-form {
     margin-top: 1em;
     padding: 1em;
     border-top: 1px solid #ddd;
-    text-align: left; /* Centrowanie zawartości */
-
+    text-align: left; 
 }
 
 .email-form h4 {
@@ -168,9 +168,9 @@ main {
 
 .email-form input,
 .email-form textarea {
-    width: calc(100% - 20px); /* Szerokość - margines */
+    width: calc(100% - 20px); 
     padding: 0.5em;
-    margin: 0 auto 1em; /* Margines ustawiony na auto, aby elementy były wyśrodkowane */
+    margin: 0 auto 1em; 
     border: 1px solid #ddd;
     border-radius: 3px;
 }
@@ -188,7 +188,6 @@ main {
     background-color: #0056b3;
 }
 
-/* Akordeon dla formularza email */
 .email-form .accordion {
     font-family: Arial, Helvetica;
     font-weight: bold;
@@ -201,7 +200,7 @@ main {
     border-width: 1px;
     outline: none;
     transition: 0.4s;
-    margin-bottom: 10px; /* Dodanie marginesu */
+    margin-bottom: 10px; 
 }
 
 .email-form .accordion.active, .email-form .accordion:hover {
@@ -216,13 +215,12 @@ main {
 }
 
 
-/* Stylowanie filtrów */
 #filters {
     padding: 15px;
     border-radius: 8px;
     background-color: #f8f9fa;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    text-align: center; /* Centrowanie zawartości */
+    text-align: center; 
 }
 
 #filters h2 {
@@ -239,7 +237,7 @@ main {
 }
 
 #price-label {
-    margin: 0 auto 10px; /* Przesunięcie ceny bliżej suwaka */
+    margin: 0 auto 10px; 
     font-weight: bold;
     color: #555;
 }
@@ -249,7 +247,7 @@ main {
 #filters button {
     width: 100%;
     padding: 8px;
-    margin-bottom: 10px; /* Większy margines */
+    margin-bottom: 10px; 
     border: 1px solid #ccc;
     border-radius: 5px;
     font-size: 0.9rem;
@@ -268,7 +266,6 @@ main {
     background-color: #0056b3;
 }
 
-/* Nowy styl dla wyboru lat produkcji */
 #year-range-container {
     display: flex;
     flex-direction: column;
@@ -286,18 +283,18 @@ main {
     width: 48%;
 }
 
-/* Stylowanie stopki */
 footer {
-    background-color: rgba(0, 0, 0); 
+    background-color: rgba(0, 0, 0, 0.8); 
     color: white; 
-    position: static; 
+    position: sticky; 
     text-align: center; 
-    padding: 0px; 
-    bottom: 0px; 
+    padding: 10px 0; 
     width: 100%;
+    bottom: 0;
+    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
 }
 
 footer p {
     font-size: 14px;
-    margin: 0px 0;
+    margin: 0;
 }

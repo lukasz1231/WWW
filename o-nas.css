@@ -1,4 +1,4 @@
-/* Resetowanie domyślnych styli */
+
 * {
     margin: 0;
     padding: 0;
@@ -13,28 +13,34 @@ body {
     background: #fff;
     margin: 0;
     padding: 0;
-    bottom: 0;
 }
 
-/* Stylowanie nagłówka */
+
 header {
-    display: flex;
+    display: flex;header .logo {
+    position: absolute;
+    left: 10px;
+    top: 50%;  
+    transform: translateY(-50%);  
+    padding: 0; 
+}
     justify-content: center;
     align-items: center;
     background-color: rgba(0, 0, 0, 0.7);
-    padding: 20px 0px;
-    position: static;
+    padding: 20px 0;
+    position: fixed;
     width: 100%;
     top: 0;
     z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 header .logo {
-    top: 0px;
     position: absolute;
-    left: 0px;
-    padding: 7px 10px; 
-    
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 0;
 }
 
 header .logo img {
@@ -51,27 +57,28 @@ header nav ul {
 
 header nav ul li {
     display: inline;
-    
 }
 
 header nav ul li a {
     color: #fff;
     text-decoration: none;
-    padding: 30px 20px;
+    padding: 10px 20px;
+    transition: background-color 0.3s, color 0.3s;
 }
 
 header nav ul li a:hover {
     background-color: #333;
     color: #ddd;
+    border-radius: 5px;
 }
 
-/* Stylowanie głównej sekcji */
+
 main {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 100px 20px;
+    padding: 100px 20px 60px; 
     text-align: center;
 }
 
@@ -92,23 +99,24 @@ main .tresc .opis p {
     line-height: 1.6;
 }
 
-/* Stylowanie stopki */
+
 footer {
-    background-color: rgba(0, 0, 0); 
+    background-color: rgba(0, 0, 0, 0.8); 
     color: white; 
-    position: static; 
+    position: sticky; 
     text-align: center; 
-    padding: 0px; 
-    bottom: 0px; 
+    padding: 10px 0; 
     width: 100%;
+    bottom: 0;
+    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
 }
 
 footer p {
     font-size: 14px;
-    margin: 0px 0;
+    margin: 0;
 }
 
-/* Responsive adjustments */
+
 @media (max-width: 768px) {
     header {
         flex-direction: column;
