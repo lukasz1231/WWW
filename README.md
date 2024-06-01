@@ -10,10 +10,6 @@ na sam koniec:
 - mozna dać wspólny css do wszystkich stron i ewentualnie komentarzami oddzielić do której strony odnosi sie jakiś dodatkowy fragment kodu
 - w panelu administratora dodanie ułatwienia wpisywania oraz sprawdzanie czy dana wartość jest odpowiednią wartością
 
-
-w wynajem do dodania:
-- przycisk z wysylaniem emaila jest krzywo troche 
-
 ---------------------------------------------------------------------
 WYKONANA ROBOTA:
 
@@ -32,6 +28,8 @@ WYKONANA ROBOTA:
 - usunąłem w javascripcie możliwość wysyłania maila
 - naprawiony akordeon (zrobione)
 - dodanie wiekszej ilosci filtrow (zrobione, dodalem po roku produkcji filtracje)
+- przycisk z wysylaniem emaila jest krzywo troche (zrobione)
+- dodanie "DARK MODE" (zrobione)
 
 *O nas:
 - dodac mape (zrobione)
