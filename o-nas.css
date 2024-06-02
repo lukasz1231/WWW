@@ -103,13 +103,14 @@ main .tresc .opis p {
 footer {
     background-color: rgba(0, 0, 0, 0.8); 
     color: white; 
-    position: sticky; 
+    position: fixed; 
     text-align: center; 
     padding: 10px 0; 
     width: 100%;
     bottom: 0;
     box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
 }
+
 
 footer p {
     font-size: 14px;
