@@ -4,9 +4,9 @@ body {
     background: #fff;
     margin: 0;
     padding: 0;
+    margin-bottom: 40px;
 }
 
-/* Stylowanie nagłówka */
 header {
     display: flex;
     justify-content: center;
@@ -55,9 +55,6 @@ header nav ul li a:hover {
     color: #ddd;
 }
 
-
-
-
 main {
     padding: 20px;
 }
@@ -76,10 +73,10 @@ form label {
     font-weight: bold;
 }
 
-form input, form button {
-    padding: 10px;
-    font-size: 16px;
+form input, form, button {
+    font-size: 14px;
 }
+
 
 .trailer {
     border: 1px solid #ccc;
@@ -106,7 +103,7 @@ form input, form button {
 footer {
     background-color: rgba(0, 0, 0); 
     color: white; 
-    position: static; 
+    position: fixed; 
     text-align: center; 
     padding: 0px; 
     bottom: 0px; 
@@ -116,4 +113,90 @@ footer {
 footer p {
     font-size: 14px;
     margin: 0px 0;
+}
+
+/* Dodaj style dla trybu ciemnego */
+.dark-mode {
+    background-color: #222; /* Tło w trybie ciemnym */
+    color: #fff; /* Kolor tekstu w trybie ciemnym */
+}
+
+/* Zmodyfikuj kolor tła przycisku "Dark Mode" w trybie ciemnym */
+.dark-mode button {
+    background-color: #444; /* Kolor tła przycisku w trybie ciemnym */
+    color: #fff; /* Kolor tekstu przycisku w trybie ciemnym */
+}
+
+/* Dodaj style dla linków w menu w trybie ciemnym */
+.dark-mode header nav ul li a {
+    color: #fff; /* Kolor tekstu linków w trybie ciemnym */
+}
+
+/* Dodaj style dla paska menu w trybie ciemnym */
+.dark-mode header {
+    background-color: #333; /* Jasny odcień szarego w trybie ciemnym */
+}
+
+/* Zmodyfikuj kolor tła dla sekcji z filtrami w trybie ciemnym */
+.dark-mode #filters {
+    background-color: #333; /* Szare tło w trybie ciemnym */
+}
+
+/* Zmodyfikuj kolor tła i tekstu dla przycisku "Skontaktuj się z nami" w trybie ciemnym */
+.dark-mode .email-form button {
+    background-color: #444; /* Kolor tła przycisku w trybie ciemnym */
+    color: #fff; /* Kolor tekstu przycisku w trybie ciemnym */
+}
+.dark-mode footer {
+    background-color: #333;
+}
+
+/* Zmiana koloru tekstu w filtrach na biały w trybie ciemnym */
+.dark-mode #filters label,
+.dark-mode #filters select,
+.dark-mode #filters h2,
+.dark-mode #filters button {
+    color: #fff; /* Kolor tekstu w trybie ciemnym */
+}
+
+.dark-mode #price-label {
+    color: #fff;
+}
+
+.dark-mode-toggle {
+    background-color: transparent;
+    color: #fff;
+    border: 2px solid #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+.dark-mode-toggle:hover {
+    background-color: #fff;
+    color: #222;
+}
+
+.dark-mode-toggle:focus {
+    outline: none;
+}
+
+.dark-mode-toggle::before {
+    content: "\2600"; /* Unicode dla ikony słońca */
+    font-size: 10px;
+    margin-right: 5px;
+}
+
+.dark-mode .dark-mode-toggle {
+    border-color: #fff;
+    color: #fff;
+}
+
+.dark-mode .dark-mode-toggle:hover {
+    background-color: #fff;
+    color: #222;
+}
+
+.dark-mode .dark-mode-toggle::before {
+    content: "\1F319"; /* Unicode dla ikony księżyca */
 }

@@ -388,3 +388,11 @@ footer p {
     content: "\1F319"; /* Unicode dla ikony księżyca */
 }
 
+/* Dodaj style dla panelu w trybie ciemnym */
+.dark-mode .panel {
+    background-color: #222; /* Tło panelu w trybie ciemnym */
+    color: #fff; /* Kolor tekstu panelu w trybie ciemnym */
+}
+
+
+

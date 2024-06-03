@@ -14,13 +14,13 @@
                 <li><a href="wynajem.html">Wynajem</a></li>
                 <li><a href="o-nas.html">O Nas</a></li>
                 <li><a href="kontakt.html">Kontakt</a></li>
-
+                <li><button class="dark-mode-toggle" onclick="toggleDarkMode()">Dark Mode</button></li>
             </ul>
         </nav>
     </header>
     <main>
         <section id="add-offer">
-            <h2>Dodaj nowe ogłoszenie</h2>
+            <h2>Dodaj nowe ogłoszenie:</h2>
             <form id="add-offer-form">
                 <label for="brand">Marka:</label>
                 <input type="text" id="brand" name="brand" required>
@@ -43,10 +43,17 @@
                 <button type="submit">Dodaj ogłoszenie</button>
             </form>
         </section>
+        <hr>
         <section id="clear-offers">
-            <h2>Usuń wszystkie ogłoszenia</h2>
-            <button id="clear-offers-button">Wyczyść</button>
+            <h2>Usuń wszystkie ogłoszenia:</h2>
+            <button id="clear-offers-button">Wyczyść wszystkie ogłoszenia</button>
         </section>
+        <hr>
+        <section id="offers-section">
+            <h2>Lista ofert:</h2>
+            <div id="offers-list"></div>
+        </section>
+
     </main>
     <footer>
         <p>&copy; 2024 PB TRANS. Wszelkie prawa zastrzeżone.</p>

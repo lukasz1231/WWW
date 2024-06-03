@@ -17,13 +17,7 @@ body {
 
 
 header {
-    display: flex;header .logo {
-    position: absolute;
-    left: 10px;
-    top: 50%;  
-    transform: translateY(-50%);  
-    padding: 0; 
-}
+    display: flex;
     justify-content: center;
     align-items: center;
     background-color: rgba(0, 0, 0, 0.7);
@@ -103,7 +97,7 @@ main .tresc .opis p {
 footer {
     background-color: rgba(0, 0, 0, 0.8); 
     color: white; 
-    position: sticky; 
+    position: fixed; 
     text-align: center; 
     padding: 10px 0; 
     width: 100%;
@@ -162,4 +156,64 @@ footer p {
     .opis p {
         font-size: 14px;
     }
+}
+
+.dark-mode-toggle {
+    background-color: transparent;
+    color: #fff;
+    border: 2px solid #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+.dark-mode-toggle:hover {
+    background-color: #fff;
+    color: #222;
+}
+
+.dark-mode-toggle:focus {
+    outline: none;
+}
+
+.dark-mode-toggle::before {
+    content: "\2600"; /* Unicode dla ikony słońca */
+    font-size: 10px;
+    margin-right: 5px;
+}
+
+.dark-mode .dark-mode-toggle {
+    border-color: #fff;
+    color: #fff;
+}
+
+.dark-mode .dark-mode-toggle:hover {
+    background-color: #fff;
+    color: #222;
+}
+
+.dark-mode .dark-mode-toggle::before {
+    content: "\1F319"; /* Unicode dla ikony księżyca */
+}
+
+.dark-mode {
+    background-color: #222; /* Tło w trybie ciemnym */
+    color: #fff; /* Kolor tekstu w trybie ciemnym */
+}
+
+.dark-mode header {
+    background-color: #333; /* Jasny odcień szarego w trybie ciemnym */
+}
+
+.dark-mode footer {
+    background-color: #333;
+}
+
+/* Zmiana koloru tekstu w trybie ciemnym */
+.dark-mode body,
+.dark-mode h1,
+.dark-mode h2,
+.dark-mode p,
+.dark-mode label {
+    color: #fff;
 }

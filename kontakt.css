@@ -105,6 +105,11 @@ main {
     width: calc(100% - 30px);
 }
 
+#tresc-formularza {
+    display: none;
+    margin-top: 10px; /* Domyślnie brak marginesu */
+}
+
 #formularz-kontaktowy button {
     padding: 12px 25px;
     background-color: rgba(0, 0, 0, 0.8);
@@ -126,7 +131,7 @@ footer {
     text-align: center; 
     padding: 10px 0; 
     width: 100%;
-    position: sticky;
+    position: fixed;
     bottom: 0;
     left: 0;
     box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
@@ -188,4 +193,81 @@ form.accordion-content textarea {
     font-size: 14px;
     margin-top: 10px;
     color: #666;
+}
+
+.dark-mode {
+    background-color: #222; /* Tło w trybie ciemnym */
+    color: #fff; /* Kolor tekstu w trybie ciemnym */
+}
+
+/* Zmodyfikuj kolor tła przycisku "Dark Mode" w trybie ciemnym */
+.dark-mode button {
+    background-color: #444; /* Kolor tła przycisku w trybie ciemnym */
+    color: #fff; /* Kolor tekstu przycisku w trybie ciemnym */
+}
+
+/* Dodaj style dla linków w menu w trybie ciemnym */
+.dark-mode header nav ul li a {
+    color: #fff; /* Kolor tekstu linków w trybie ciemnym */
+}
+
+/* Dodaj style dla paska menu w trybie ciemnym */
+.dark-mode header {
+    background-color: #333; /* Jasny odcień szarego w trybie ciemnym */
+}
+
+.dark-mode footer {
+    background-color: #333;
+}
+
+/* Zmiana koloru tekstu w sekcjach na biały w trybie ciemnym */
+.dark-mode #info-kontakt, 
+.dark-mode #formularz-kontaktowy, 
+.dark-mode #mapa, 
+.dark-mode #godziny-pracy {
+    background-color: #222; /* Szare tło w trybie ciemnym */
+    color: white;
+}
+
+/* Upewnij się, że wszystkie teksty formularza mają biały kolor w trybie ciemnym */
+.dark-mode #formularz-kontaktowy label,
+.dark-mode #formularz-kontaktowy input,
+.dark-mode #formularz-kontaktowy textarea,
+.dark-mode #info-kontakt p,
+.dark-mode #info-kontakt h2,
+.dark-mode #formularz-kontaktowy h2 {
+    color: #fff; /* Kolor tekstu */
+}
+
+.dark-mode-toggle {
+    background-color: transparent;
+    color: #fff;
+    border: 2px solid #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+.dark-mode-toggle:hover {
+    background-color: #fff;
+    color: #222;
+}
+
+.dark-mode-toggle:focus {
+    outline: none;
+}
+
+.dark-mode-toggle::before {
+    content: "\2600"; /* Unicode dla ikony słońca */
+    font-size: 10px;
+    margin-right: 5px;
+}
+
+.dark-mode .dark-mode-toggle {
+    border-color: #fff;
+    color: #fff;
+}
+
+.dark-mode .dark-mode-toggle::before {
+    content: "\1F319"; /* Unicode dla ikony księżyca */
 }
