@@ -8,9 +8,7 @@ body, html {
     padding: 0;
     box-sizing: border-box;
     min-height: 100%;
-    background-image: url("https://img.freepik.com/premium-wektory/ikona-wektora-ludzi-grupa-ludzi-ikona-ikona-tlumu-ikona-ludzi_564974-1238.jpg");
-    background-repeat: no-repeat;
-    background-position: left, right;
+
 }
 
 
@@ -77,6 +75,7 @@ main {
 
 main .tresc {
     max-width: 800px;
+
 }
 
 main .tresc .nazwa-firmy h1 {
