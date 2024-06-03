@@ -1,9 +1,11 @@
-body {
+body, html{
     font-family: 'Arial', sans-serif;
     color: #000;
     background: #fff;
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+    min-height: 100%;
 }
 
 header {
@@ -12,7 +14,7 @@ header {
     align-items: center;
     background-color: rgba(0, 0, 0, 0.7);
     padding: 20px 0;
-    position: static;
+    position: fixed;
     width: 100%;
     top: 0;
     z-index: 1000;
@@ -62,7 +64,9 @@ h1 {
 
 main 
 {
+    margin-top: 50px; /*aby header nie zachodził na początku na main*/
     padding: 1em;
+    margin-bottom: 109px; /*aby w przypadku braku produktow nie rozjechal sie footer*/
 }
 
 .offer {
@@ -289,7 +293,7 @@ main
 footer {
     background-color: rgba(0, 0, 0, 0.8); 
     color: white; 
-    position: fixed; 
+     
     text-align: center; 
     padding: 10px 0; 
     width: 100%;
@@ -310,15 +314,20 @@ footer p {
 
 
 .dark-mode button {
-    background-color: #444; 
+    background-color: #333; 
     color: #fff; 
 }
 
 
 .dark-mode header nav ul li a {
     color: #fff; 
+    background-color: #333;
 }
-
+.dark-mode header nav ul li a:hover{
+    background-color: #222;
+    color: #ddd;
+    border-radius: 5px;
+}
 
 .dark-mode header {
     background-color: #333; 
@@ -329,6 +338,22 @@ footer p {
     background-color: #333; 
 }
 
+.dark-mode #brand-select
+{
+    background-color: #333;
+}
+.dark-mode #type-select
+{
+    background-color: #333;
+}
+.dark-mode #year-from-select
+{
+    background-color: #333;
+}
+.dark-mode #year-to-select
+{
+    background-color: #333;
+}
 
 .dark-mode .email-form button {
     background-color: #444; 
@@ -354,7 +379,7 @@ footer p {
     background-color: transparent;
     color: #fff;
     border: 2px solid #fff;
-    border-radius: 5px;
+    border-radius: 10px;
     cursor: pointer;
     transition: background-color 0.3s, color 0.3s, border-color 0.3s;
 }
@@ -371,7 +396,7 @@ footer p {
 .dark-mode-toggle::before {
     content: "\2600"; 
     font-size: 10px;
-    margin-right: 5px;
+    margin-right: 10px;
 }
 
 .dark-mode .dark-mode-toggle {
@@ -386,6 +411,7 @@ footer p {
 
 .dark-mode .dark-mode-toggle::before {
     content: "\1F319"; 
+    margin-right: 5px; /*bo ksiezyc jest wiekszy od slonca*/
 }
 
 /* Dodaj style dla panelu w trybie ciemnym */

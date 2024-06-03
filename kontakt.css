@@ -131,7 +131,6 @@ footer {
     text-align: center; 
     padding: 10px 0; 
     width: 100%;
-    position: fixed;
     bottom: 0;
     left: 0;
     box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
@@ -200,15 +199,20 @@ form.accordion-content textarea {
     color: #fff; /* Kolor tekstu w trybie ciemnym */
 }
 
-/* Zmodyfikuj kolor tła przycisku "Dark Mode" w trybie ciemnym */
 .dark-mode button {
-    background-color: #444; /* Kolor tła przycisku w trybie ciemnym */
-    color: #fff; /* Kolor tekstu przycisku w trybie ciemnym */
+    background-color: #333; 
+    color: #fff; 
 }
 
-/* Dodaj style dla linków w menu w trybie ciemnym */
+
 .dark-mode header nav ul li a {
-    color: #fff; /* Kolor tekstu linków w trybie ciemnym */
+    color: #fff; 
+    background-color: #333;
+}
+.dark-mode header nav ul li a:hover{
+    background-color: #222;
+    color: #ddd;
+    border-radius: 5px;
 }
 
 /* Dodaj style dla paska menu w trybie ciemnym */
@@ -243,7 +247,7 @@ form.accordion-content textarea {
     background-color: transparent;
     color: #fff;
     border: 2px solid #fff;
-    border-radius: 5px;
+    border-radius: 10px;
     cursor: pointer;
     transition: background-color 0.3s, color 0.3s, border-color 0.3s;
 }
@@ -260,7 +264,7 @@ form.accordion-content textarea {
 .dark-mode-toggle::before {
     content: "\2600"; /* Unicode dla ikony słońca */
     font-size: 10px;
-    margin-right: 5px;
+    margin-right: 10px;
 }
 
 .dark-mode .dark-mode-toggle {
@@ -268,6 +272,12 @@ form.accordion-content textarea {
     color: #fff;
 }
 
+.dark-mode .dark-mode-toggle:hover {
+    background-color: #fff;
+    color: #222;
+}/* po najechaniu  */
+
 .dark-mode .dark-mode-toggle::before {
     content: "\1F319"; /* Unicode dla ikony księżyca */
+    margin-right: 5px;
 }
