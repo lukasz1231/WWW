@@ -236,7 +236,7 @@ main
 }
 
 #price-range {
-    margin-left: -10px; /* Margines z lewej strony (20px z domyślnego marginesu plus 10px przesunięcia w lewo) */
+    margin-left: -10px; 
 }
 
 #price-label {
@@ -289,7 +289,7 @@ main
 footer {
     background-color: rgba(0, 0, 0, 0.8); 
     color: white; 
-    position: static; 
+    position: fixed; 
     text-align: center; 
     padding: 10px 0; 
     width: 100%;
@@ -302,48 +302,48 @@ footer p {
     margin: 0;
 }
 
-/* Dodaj style dla trybu ciemnego */
+
 .dark-mode {
-    background-color: #222; /* Tło w trybie ciemnym */
-    color: #fff; /* Kolor tekstu w trybie ciemnym */
+    background-color: #222; 
+    color: #fff; 
 }
 
-/* Zmodyfikuj kolor tła przycisku "Dark Mode" w trybie ciemnym */
+
 .dark-mode button {
-    background-color: #444; /* Kolor tła przycisku w trybie ciemnym */
-    color: #fff; /* Kolor tekstu przycisku w trybie ciemnym */
+    background-color: #444; 
+    color: #fff; 
 }
 
-/* Dodaj style dla linków w menu w trybie ciemnym */
+
 .dark-mode header nav ul li a {
-    color: #fff; /* Kolor tekstu linków w trybie ciemnym */
+    color: #fff; 
 }
 
-/* Dodaj style dla paska menu w trybie ciemnym */
+
 .dark-mode header {
-    background-color: #333; /* Jasny odcień szarego w trybie ciemnym */
+    background-color: #333; 
 }
 
-/* Zmodyfikuj kolor tła dla sekcji z filtrami w trybie ciemnym */
+
 .dark-mode #filters {
-    background-color: #333; /* Szare tło w trybie ciemnym */
+    background-color: #333; 
 }
 
-/* Zmodyfikuj kolor tła i tekstu dla przycisku "Skontaktuj się z nami" w trybie ciemnym */
+
 .dark-mode .email-form button {
-    background-color: #444; /* Kolor tła przycisku w trybie ciemnym */
-    color: #fff; /* Kolor tekstu przycisku w trybie ciemnym */
+    background-color: #444; 
+    color: #fff; 
 }
 .dark-mode footer {
     background-color: #333;
 }
 
-/* Zmiana koloru tekstu w filtrach na biały w trybie ciemnym */
+
 .dark-mode #filters label,
 .dark-mode #filters select,
 .dark-mode #filters h2,
 .dark-mode #filters button {
-    color: #fff; /* Kolor tekstu w trybie ciemnym */
+    color: #fff; 
 }
 
 .dark-mode #price-label {
@@ -369,7 +369,7 @@ footer p {
 }
 
 .dark-mode-toggle::before {
-    content: "\2600"; /* Unicode dla ikony słońca */
+    content: "\2600"; 
     font-size: 10px;
     margin-right: 5px;
 }
@@ -385,7 +385,7 @@ footer p {
 }
 
 .dark-mode .dark-mode-toggle::before {
-    content: "\1F319"; /* Unicode dla ikony księżyca */
+    content: "\1F319"; 
 }
 
 /* Dodaj style dla panelu w trybie ciemnym */

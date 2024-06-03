@@ -93,7 +93,7 @@ document.addEventListener('DOMContentLoaded', function() {
 document.getElementById('add-offer-form').addEventListener('submit', function(event) {
     event.preventDefault();
 
-    // Pobranie danych z formularza
+    
     const brand = document.getElementById('brand').value;
     const type = document.getElementById('type').value;
     const price = document.getElementById('price').value;
@@ -101,7 +101,7 @@ document.getElementById('add-offer-form').addEventListener('submit', function(ev
     const vin = document.getElementById('vin').value;
     const images = document.getElementById('images').value.split(',');
 
-    // Utworzenie nowej oferty jako obiekt
+    
     const newOffer = {
         brand,
         type,
@@ -111,30 +111,24 @@ document.getElementById('add-offer-form').addEventListener('submit', function(ev
         images
     };
 
-    // Pobranie ofert z localStorage
+    
     let offers = JSON.parse(localStorage.getItem('offers')) || [];
     offers.push(newOffer);
     localStorage.setItem('offers', JSON.stringify(offers));
 
-    // Wyświetlenie ofert
-    displayOffers(offers);
-
-    // Resetowanie formularza
+    
     document.getElementById('add-offer-form').reset();
 
     // Powiadomienie użytkownika o dodaniu nowej oferty
     alert('Nowa oferta została dodana.');
 });
 
-// Obsługa przycisku "Wyczyść"
+
 document.getElementById('clear-offers-button').addEventListener('click', function() {
-    // Usunięcie ofert z localStorage
+    
     localStorage.removeItem('offers');
-    // Usunięcie ofert z widoku
-    const offersList = document.getElementById('offers-list');
-    offersList.innerHTML = '';
-    // Powiadomienie użytkownika o wyczyszczeniu ofert
-    alert('Wszystkie oferty zostały usunięte.');
+    
+    alert('Wszystkie ogłoszenia zostały usunięte.');
 });
 
 function toggleDarkMode() {

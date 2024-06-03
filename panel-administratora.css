@@ -7,6 +7,7 @@ body {
     margin-bottom: 40px;
 }
 
+
 header {
     display: flex;
     justify-content: center;
@@ -99,7 +100,7 @@ form input, form, button {
     gap: 10px;
 }
 
-/* Stylowanie stopki */
+
 footer {
     background-color: rgba(0, 0, 0); 
     color: white; 
