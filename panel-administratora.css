@@ -4,10 +4,9 @@ body {
     background: #fff;
     margin: 0;
     padding: 0;
-    margin-bottom: 40px;
 }
 
-
+/* Stylowanie nagłówka */
 header {
     display: flex;
     justify-content: center;
@@ -56,6 +55,9 @@ header nav ul li a:hover {
     color: #ddd;
 }
 
+
+
+
 main {
     padding: 20px;
 }
@@ -74,10 +76,10 @@ form label {
     font-weight: bold;
 }
 
-form input, form, button {
-    font-size: 14px;
+form input, form button {
+    padding: 10px;
+    font-size: 16px;
 }
-
 
 .trailer {
     border: 1px solid #ccc;
@@ -100,7 +102,7 @@ form input, form, button {
     gap: 10px;
 }
 
-
+/* Stylowanie stopki */
 footer {
     background-color: rgba(0, 0, 0); 
     color: white; 
