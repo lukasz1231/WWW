@@ -5,9 +5,7 @@ na sam koniec:
 - dodać dokumentacje czyli opisać dokładnie co robią dane linijki kodu
 
 - menu zmienic wszedzie tak zeby jakos to wygladalo
-- footer zmienic wszedzie tak zeby był na dole strony po przescrollowaniu na dół a nie przyklejony na dole jak menu
 
-- mozna dać wspólny css do wszystkich stron i ewentualnie komentarzami oddzielić do której strony odnosi sie jakiś dodatkowy fragment kodu
 - w panelu administratora dodanie ułatwienia wpisywania oraz sprawdzanie czy dana wartość jest odpowiednią wartością
 
 ---------------------------------------------------------------------
@@ -35,7 +33,7 @@ WYKONANA ROBOTA:
 - dodac mape (zrobione)
 - mozna jakoś uładnić
 - dodanie godziny pracy (zrobione)
--
+- dodanie darkmode (zrobione)
 -
 -
 
@@ -43,7 +41,7 @@ WYKONANA ROBOTA:
 - można jakoś uładnić
 - akordeon na przycisk do kontaktu - (zrobione)
 - dodanie mapy - jak dojechac (zrobione)
--
+- dodanie darkmode (zrobione)
 -
 
 *Panel administratora
@@ -51,4 +49,5 @@ WYKONANA ROBOTA:
 - dodanie opcji ustawienia danej oferty przez administratora jako wynajęta
 - potestowanie i pozmienianie tak aby dodawało jedną oferte na raz (zrobione)
 - dodanie sprawdzania czy podane wartości są poprawne (poprawny vin itd)
-  
+- dodanie darkmode (zrobione)
+- dodanie opcji edycji ogloszenia / usuniecia (zrobione)  
