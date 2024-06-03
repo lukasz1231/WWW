@@ -17,6 +17,14 @@ document.addEventListener("DOMContentLoaded", function() {
 function toggleDarkMode() {
     const body = document.body;
     body.classList.toggle("dark-mode");
+    const isDarkMode = body.classList.contains('dark-mode');
+    localStorage.setItem('darkMode', isDarkMode ? 'enabled' : 'disabled');
+
+}
+// Sprawdź stan trybu ciemnego przy ładowaniu strony
+const darkMode = localStorage.getItem('darkMode');
+if (darkMode === 'enabled') {
+    toggleDarkMode(); // włącz tryb ciemny jeśli zapisany stan to "enabled"
 }
 
 // Skrypt do obsługi przycisku formularza

@@ -13,4 +13,12 @@ function toggleDarkMode() {
     buttons.forEach(button => {
         button.classList.toggle('dark-mode');
     });
+    const isDarkMode = body.classList.contains('dark-mode');
+    localStorage.setItem('darkMode', isDarkMode ? 'enabled' : 'disabled');
 }
+ // Sprawdź stan trybu ciemnego przy ładowaniu strony
+ const darkMode = localStorage.getItem('darkMode');
+ if (darkMode === 'enabled') {
+     toggleDarkMode(); // włącz tryb ciemny jeśli zapisany stan to "enabled"
+ }
+

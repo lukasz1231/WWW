@@ -195,4 +195,13 @@ function toggleDarkMode() {
 
     // Zmiana koloru tła i koloru tekstu dla przycisku skontaktuj się z nami
     contactButton.classList.toggle('dark-mode');
+
+    const isDarkMode = body.classList.contains('dark-mode');
+    localStorage.setItem('darkMode', isDarkMode ? 'enabled' : 'disabled');
 }
+
+ // Sprawdź stan trybu ciemnego przy ładowaniu strony
+ const darkMode = localStorage.getItem('darkMode');
+ if (darkMode === 'enabled') {
+     toggleDarkMode(); // włącz tryb ciemny jeśli zapisany stan to "enabled"
+ }
