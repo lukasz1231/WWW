@@ -55,3 +55,441 @@ WYKONANA ROBOTA:
 - dodanie sprawdzania czy podane wartości są poprawne (poprawny vin itd)
 - dodanie darkmode (zrobione)
 - dodanie opcji edycji ogloszenia / usuniecia (zrobione)  
+
+
+
+
+
+
+
+
+
+do dodania 
+* {
+    box-sizing: border-box;
+}
+
+body, html{
+    font-family: 'Arial', sans-serif;
+    color: #000;
+    background: #fff;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    min-height: 100vh;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 20px 0;
+    position: sticky;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+header .logo {
+    position: absolute;
+    left: 10px;
+    top: 40px;
+    transform: translateY(-50%);
+    padding: 0;
+}
+
+header .logo img {
+    height: 60px;
+}
+
+header nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 10px;
+    display: flex;
+    gap: 20px;
+}
+
+header nav ul li {
+    display: inline;
+}
+
+header nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+header nav ul li a:hover {
+    background-color: #333;
+    color: #ddd;
+    border-radius: 5px;
+}
+
+h1 {
+    margin: 0;
+}
+
+main 
+{ 
+    padding: 1em;
+    padding-bottom: 109px;
+    min-height: calc(100vh - 53px - 81px); 
+}
+
+.offer {
+    margin: 1em auto;
+    max-width: 600px;
+    border: 1px solid #ddd;
+    padding: 1em;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.carousel {
+    position: relative;
+    max-width: 100%;
+    margin: auto;
+}
+
+.slide {
+    display: none;
+    width: 100%;
+}
+
+.active {
+    display: block;
+}
+
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: auto;
+    padding: 16px;
+    font-weight: bold;
+    font-size: 18px;
+    user-select: none;
+    background: rgba(0, 0, 0, 0.5);
+    border: none;
+    color: white;
+}
+
+.prev {
+    left: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.next {
+    right: 0;
+    border-radius: 0 3px 3px 0;
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.accordion {
+    font-family: Arial, Helvetica;
+    font-weight: bold;
+    color: #000000;
+    cursor: pointer;
+    padding: 10px;
+    width: 100%;
+    text-align: center;
+    border: solid;
+    border-width: 1px;
+    outline: none;
+    transition: 0.4s;
+}
+
+.accordion.active, .accordion:hover {
+    background-color: #ccc;
+}
+
+.panel {
+    padding: 0 18px;
+    display: none;
+    background-color: white;
+    overflow: hidden;
+}
+
+.cena {
+    font-family: Franklin Gothic Medium, Arial;
+    font-style: italic;
+    font-weight: bold;
+}
+
+.email-form {
+    margin-top: 1em;
+    padding: 1em;
+    border-top: 1px solid #ddd;
+    text-align: left; 
+}
+
+.email-form h4 {
+    margin-bottom: 30px;
+}
+
+.email-form label {
+    display: block;
+    margin-bottom: 0.5em;
+    font-weight: bold;
+}
+
+.email-form input,
+.email-form textarea {
+    width: calc(100% - 20px); 
+    padding: 0.5em;
+    margin: 0 auto 1em; 
+    border: 1px solid #ddd;
+    border-radius: 3px;
+}
+
+.email-form button[type="submit"] {
+    padding: 0.5em 1em;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.email-form button:hover {
+    background-color: #0056b3;
+}
+
+.email-form .accordion {
+    font-family: Arial, Helvetica;
+    font-weight: bold;
+    color: #000000;
+    cursor: pointer;
+    padding: 10px;
+    width: 100%;
+    text-align: center;
+    border: solid;
+    border-width: 1px;
+    outline: none;
+    transition: 0.4s;
+    margin-bottom: 20px; 
+}
+
+.email-form .accordion.active, .email-form .accordion:hover {
+    background-color: #ccc;
+}
+
+.email-form .panel {
+    padding: 0 18px;
+    display: none;
+    background-color: white;
+    overflow: hidden;
+}
+
+
+#filters {
+    padding: 15px;
+    border-radius: 8px;
+    background-color: #f8f9fa;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center; 
+}
+
+#filters h2 {
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+    color: #333;
+}
+
+#filters label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #000000;
+}
+
+#price-range {
+    margin-left: -10px; 
+}
+
+#price-label {
+    margin: 0 auto 10px; 
+    font-weight: bold;
+    color: #494848;
+}
+
+#filters input[type="range"],
+#filters select,
+#filters button {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px; 
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+#filters button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#filters button:hover {
+    background-color: #0056b3;
+}
+
+#year-range-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+#year-range-container label {
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #000000;
+}
+
+#year-range-container select {
+    width: 48%;
+}
+
+footer {
+    background-color: rgba(0, 0, 0, 0.8); 
+    color: white; 
+    text-align: center;
+    padding: 10px 0; 
+    /*border-top: 300px solid transparent;*/
+    width: 100%;
+    bottom: 0;
+    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+}
+
+footer p {
+    font-size: 14px;
+    margin: 0;
+}
+
+
+.dark-mode {
+    background-color: #222; 
+    color: #fff; 
+}
+
+
+.dark-mode button {
+    background-color: #333; 
+    color: #fff; 
+}
+
+
+.dark-mode header nav ul li a {
+    color: #fff; 
+    background-color: #333;
+}
+.dark-mode header nav ul li a:hover{
+    background-color: #222;
+    color: #ddd;
+    border-radius: 5px;
+}
+
+.dark-mode header {
+    background-color: #333; 
+}
+
+
+.dark-mode #filters {
+    background-color: #333; 
+}
+
+.dark-mode #brand-select
+{
+    background-color: #333;
+}
+.dark-mode #type-select
+{
+    background-color: #333;
+}
+.dark-mode #year-from-select
+{
+    background-color: #333;
+}
+.dark-mode #year-to-select
+{
+    background-color: #333;
+}
+
+.dark-mode .email-form button {
+    background-color: #444; 
+    color: #fff; 
+}
+.dark-mode footer {
+    background-color: #333;
+}
+
+
+.dark-mode #filters label,
+.dark-mode #filters select,
+.dark-mode #filters h2,
+.dark-mode #filters button {
+    color: #fff; 
+}
+
+.dark-mode #price-label {
+    color: #fff;
+}
+
+.dark-mode-toggle {
+    background-color: transparent;
+    color: #fff;
+    border: 2px solid #fff;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+.dark-mode-toggle:hover {
+    background-color: #fff;
+    color: #222;
+}
+
+.dark-mode-toggle:focus {
+    outline: none;
+}
+
+.dark-mode-toggle::before {
+    content: "\2600"; 
+    font-size: 10px;
+    margin-right: 10px;
+}
+
+.dark-mode .dark-mode-toggle {
+    border-color: #fff;
+    color: #fff;
+}
+
+.dark-mode .dark-mode-toggle:hover {
+    background-color: #fff;
+    color: #222;
+}
+
+.dark-mode .dark-mode-toggle::before {
+    content: "\1F319"; 
+    margin-right: 5px; /*bo ksiezyc jest wiekszy od slonca*/
+}
+
+/* Dodaj style dla panelu w trybie ciemnym */
+.dark-mode .panel {
+    background-color: #222; /* Tło panelu w trybie ciemnym */
+    color: #fff; /* Kolor tekstu panelu w trybie ciemnym */
+}
+
+
+
