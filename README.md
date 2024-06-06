@@ -5,6 +5,13 @@ na sam koniec:
 - dodać dokumentacje czyli opisać dokładnie co robią dane linijki kodu
 - w panelu administratora dodanie ułatwienia wpisywania oraz sprawdzanie czy dana wartość jest odpowiednią wartością
 - pododawać ewentualnie jakieś zdjęcia do o nas i do kontaktu
+
+
+u nich zwracal uwage na:
+JSon server
+do kazdego zdjecia dodac alt "opis zdjecia" - w javascripcie w dodawaniu ogloszenia automatycznie ustawic alt kazdego dodanego zdjecia na tytul ogloszenia
+dodac sortowanie - wszystkie elementy wypisane tylko w kolejnosci po cenie
+dodać animacje (np. przechodzenia z białego trybu na ciemny)
 ---------------------------------------------------------------------
 WYKONANA ROBOTA:
 
