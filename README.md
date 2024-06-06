@@ -13,6 +13,7 @@ do kazdego zdjecia dodac alt "opis zdjecia" - w javascripcie w dodawaniu oglosze
 dodac sortowanie - wszystkie elementy wypisane tylko w kolejnosci po cenie
 dodać animacje (np. przechodzenia z białego trybu na ciemny)
 walidacja m.in vin
+animacje w miejscu rozwijania opisu i przy przechodzeniu pomiędzy zdjęciami
 ---------------------------------------------------------------------
 WYKONANA ROBOTA:
 
