@@ -119,8 +119,8 @@ footer p {
 
 /* Dodaj style dla trybu ciemnego */
 .dark-mode {
-    background-color: #222; /* Tło w trybie ciemnym */
-    color: #fff; /* Kolor tekstu w trybie ciemnym */
+    background-color: #222; 
+    color: #fff; 
 }
 
 /* Zmodyfikuj kolor tła przycisku "Dark Mode" w trybie ciemnym */

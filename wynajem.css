@@ -64,9 +64,9 @@ h1 {
 
 main 
 {
-    margin-top: 50px; /*aby header nie zachodził na początku na main*/
+    margin-top: 50px; 
     padding: 1em;
-    margin-bottom: 109px; /*aby w przypadku braku produktow nie rozjechal sie footer*/
+    margin-bottom: 109px; 
 }
 
 .offer {
@@ -293,7 +293,6 @@ main
 footer {
     background-color: rgba(0, 0, 0, 0.8); 
     color: white; 
-     
     text-align: center; 
     padding: 10px 0; 
     width: 100%;
@@ -411,13 +410,13 @@ footer p {
 
 .dark-mode .dark-mode-toggle::before {
     content: "\1F319"; 
-    margin-right: 5px; /*bo ksiezyc jest wiekszy od slonca*/
+    margin-right: 5px; 
 }
 
 /* Dodaj style dla panelu w trybie ciemnym */
 .dark-mode .panel {
-    background-color: #222; /* Tło panelu w trybie ciemnym */
-    color: #fff; /* Kolor tekstu panelu w trybie ciemnym */
+    background-color: #222; 
+    color: #fff; 
 }
 
 

@@ -115,7 +115,7 @@ function loadOffers() {
     let offers = JSON.parse(localStorage.getItem('offers')) || [];
     const offersContainer = document.getElementById('offers-container');
     
-    offersContainer.innerHTML = ''; // Ensure offersContainer is empty before adding new offers
+    offersContainer.innerHTML = ''; 
 
     offers.forEach((offer, index) => {
         const offerElement = document.createElement('div');
@@ -174,34 +174,29 @@ function toggleDarkMode() {
     const filters = document.getElementById('filters');
     const contactButton = document.querySelector('.email-form button');
     
-    // Zmiana koloru tła i koloru tekstu dla body, header, footer i main
     body.classList.toggle('dark-mode');
     header.classList.toggle('dark-mode');
     footer.classList.toggle('dark-mode');
     main.classList.toggle('dark-mode');
-    filters.classList.toggle('dark-mode'); // Dodaj lub usuń klasę 'dark-mode' dla filtrów
+    filters.classList.toggle('dark-mode'); 
     
-    // Zmiana koloru tekstu dla linków w menu
     const links = document.querySelectorAll('header nav ul li a');
     links.forEach(link => {
         link.classList.toggle('dark-mode');
     });
 
-    // Zmiana koloru tła i koloru tekstu dla przycisków w menu
     const buttons = document.querySelectorAll('header nav ul li button');
     buttons.forEach(button => {
         button.classList.toggle('dark-mode');
     });
 
-    // Zmiana koloru tła i koloru tekstu dla przycisku skontaktuj się z nami
     contactButton.classList.toggle('dark-mode');
 
     const isDarkMode = body.classList.contains('dark-mode');
     localStorage.setItem('darkMode', isDarkMode ? 'enabled' : 'disabled');
 }
 
- // Sprawdź stan trybu ciemnego przy ładowaniu strony
  const darkMode = localStorage.getItem('darkMode');
  if (darkMode === 'enabled') {
-     toggleDarkMode(); // włącz tryb ciemny jeśli zapisany stan to "enabled"
+     toggleDarkMode(); 
  }

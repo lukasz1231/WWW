@@ -19,6 +19,6 @@ function toggleDarkMode() {
  // Sprawdź stan trybu ciemnego przy ładowaniu strony
  const darkMode = localStorage.getItem('darkMode');
  if (darkMode === 'enabled') {
-     toggleDarkMode(); // włącz tryb ciemny jeśli zapisany stan to "enabled"
+     toggleDarkMode();
  }
 
