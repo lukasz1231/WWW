@@ -1,8 +1,10 @@
+// zaladowanie
 document.addEventListener('DOMContentLoaded', function() {
     initializeFilters();
     loadOffers();
 });
 
+// karuzele do opisu i kontatku 
 function initializeCarousels() {
     const carousels = document.querySelectorAll('.carousel');
     carousels.forEach(carousel => {
