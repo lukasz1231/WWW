@@ -1,0 +1,116 @@
+.dark-mode-toggle {
+    background-color: transparent;
+    color: #fff;
+    border: 2px solid #fff;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+.dark-mode-toggle:hover {
+    background-color: #fff;
+    color: #222;
+}
+
+.dark-mode-toggle:focus {
+    outline: none;
+}
+
+.dark-mode-toggle::before {
+    content: "\2600"; 
+    font-size: 10px;
+    margin-right: 10px;
+}
+
+.dark-mode header nav ul li a {
+    color: #fff; 
+    background-color: #333;
+}
+
+.dark-mode header nav ul li a:hover{
+    background-color: #222;
+    color: #ddd;
+    border-radius: 5px;
+}
+
+
+.dark-mode .dark-mode-toggle {
+    border-color: #fff;
+    color: #fff;
+}
+
+.dark-mode .dark-mode-toggle:hover {
+    background-color: #fff;
+    color: #222;
+}
+
+.dark-mode .dark-mode-toggle::before {
+    content: "\1F319"; 
+    margin-right: 5px;
+}
+
+.dark-mode {
+    background-color: #222; 
+    color: #fff; 
+}
+
+.dark-mode header {
+    background-color: #333; 
+}
+
+.dark-mode button {
+    background-color: #333; 
+    color: #fff; 
+}
+
+.dark-mode footer {
+    background-color: #333;
+}
+.dark-mode body,
+.dark-mode #formularz-kontaktowy label,
+.dark-mode #formularz-kontaktowy input,
+.dark-mode #formularz-kontaktowy textarea,
+.dark-mode #info-kontakt p,
+.dark-mode #info-kontakt h2,
+.dark-mode #formularz-kontaktowy h2,
+.dark-mode #filters label,
+.dark-mode #filters select,
+.dark-mode #filters h2,
+.dark-mode #filters button {
+    color: #fff; 
+}
+.dark-mode #godziny-pracy {
+    color: #fff;
+}
+
+.dark-mode #filters {
+    background-color: #333; 
+}
+
+.dark-mode #brand-select
+{
+    background-color: #333;
+}
+.dark-mode #type-select
+{
+    background-color: #333;
+}
+.dark-mode #year-from-select
+{
+    background-color: #333;
+}
+.dark-mode #year-to-select
+{
+    background-color: #333;
+}
+.dark-mode #price-label {
+    color: #fff;
+}
+.dark-mode .email-form button {
+    background-color: #444; 
+    color: #fff; 
+}
+.dark-mode .panel {
+    background-color: #222; 
+    color: #fff; 
+}
