@@ -84,17 +84,17 @@
 .dark-mode #info-kontakt p,
 .dark-mode #info-kontakt h2,
 .dark-mode #formularz-kontaktowy h2,
-.dark-mode #filters label,
-.dark-mode #filters select,
-.dark-mode #filters h2,
-.dark-mode #filters button {
+.dark-mode .filters label,
+.dark-mode .filters select,
+.dark-mode .filters h2,
+.dark-mode .filters button {
     color: #fff; 
 }
 .dark-mode #godziny-pracy {
     color: #fff;
 }
 
-.dark-mode #filters {
+.dark-mode .filters {
     background-color: #333; 
 }
 
@@ -111,6 +111,10 @@
     background-color: #333;
 }
 .dark-mode #year-to-select
+{
+    background-color: #333;
+}
+.dark-mode #sorting-select
 {
     background-color: #333;
 }

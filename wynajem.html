@@ -21,7 +21,7 @@
     </header>
 
     <main>
-        <section id="filters">
+        <section class="filters">
             <h2>Filtruj oferty</h2>
             <form id="filter-form">
                 <label for="price-range">Cena (zł/miesiąc):</label>
@@ -126,6 +126,14 @@
             </form>
         </section>
 
+        <section class="filters">
+            <label for="sorting-select">Sortuj</label>
+            <select id="sorting-select">
+                <option>dowolnie</option>
+                <option value="od najniższej">cena: od najniższej</option>
+                <option value="od najwyższej">cena: od najwyższej</option>
+            </select>
+        </section>
         <div id="offers-container">
             
         </div>

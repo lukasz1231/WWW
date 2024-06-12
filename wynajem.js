@@ -1,10 +1,9 @@
-// zaladowanie
 document.addEventListener('DOMContentLoaded', function() {
     initializeFilters();
     loadOffers();
 });
 
-// karuzele do opisu i kontatku 
+// Karuzele do opisu i kontaktu 
 function initializeCarousels() {
     const carousels = document.querySelectorAll('.carousel');
     carousels.forEach(carousel => {
@@ -31,8 +30,6 @@ function changeSlide(n, carouselId) {
     }
 }
 
-
-
 function updatePriceLabel(value) {
     document.getElementById('price-label').textContent = `${value} zł`;
 }
@@ -43,6 +40,7 @@ function initializeFilters() {
     const typeSelect = document.getElementById('type-select');
     const yearFromSelect = document.getElementById('year-from-select');
     const yearToSelect = document.getElementById('year-to-select');
+    const sortingSelect = document.getElementById('sorting-select');
 
     if (priceRange && brandSelect && typeSelect && yearFromSelect && yearToSelect) {
         priceRange.addEventListener('input', () => {
@@ -54,9 +52,48 @@ function initializeFilters() {
         typeSelect.addEventListener('change', filterOffers);
         yearFromSelect.addEventListener('change', filterOffers);
         yearToSelect.addEventListener('change', filterOffers);
+        sortingSelect.addEventListener('change', () => {
+            saveSortOption();
+            sortOffers();
+        });
     }
 
+    loadSortOption(); // Przywróć stan sortowania
     filterOffers();
+}
+
+function saveSortOption() {
+    const sortOption = document.getElementById('sorting-select').value;
+    localStorage.setItem('sortOption', sortOption);
+}
+
+function loadSortOption() {
+    const sortOption = localStorage.getItem('sortOption');
+    if (sortOption) {
+        document.getElementById('sorting-select').value = sortOption;
+    }
+}
+
+function sortOffers() {
+    const sort = document.getElementById('sorting-select').value;
+    const offersContainer = document.getElementById('offers-container');
+    const offers = Array.from(offersContainer.getElementsByClassName('offer'));
+
+    offers.sort((a, b) => {
+        const priceA = parseInt(a.getAttribute('data-price'));
+        const priceB = parseInt(b.getAttribute('data-price'));
+
+        if (sort === 'od najniższej') {
+            return priceA - priceB;
+        } else if (sort === 'od najwyższej') {
+            return priceB - priceA;
+        } else {
+            return 0; // Dowolne sortowanie, brak zmian
+        }
+    });
+
+    offersContainer.innerHTML = '';
+    offers.forEach(offer => offersContainer.appendChild(offer));
 }
 
 function filterOffers() {
@@ -98,6 +135,8 @@ function filterOffers() {
 
         offer.style.display = showOffer ? 'block' : 'none';
     });
+
+    sortOffers(); // Sortuj oferty po filtrowaniu
 }
 
 function loadOffers() {
@@ -146,7 +185,6 @@ function loadOffers() {
                     </form>
                 </div>
             </div>
-
         `;
         
         offersContainer.appendChild(offerElement);

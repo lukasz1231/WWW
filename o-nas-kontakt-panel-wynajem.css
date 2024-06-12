@@ -328,23 +328,23 @@ form input, form button {
 }
 
 
-#filters { 
+.filters { 
     padding: 15px;
     padding-left: 300px;
     padding-right: 300px;
     border-radius: 8px; 
+    margin-bottom: 10px;
     background-color: #f8f9fa; 
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
     text-align: center; 
 }
-
-#filters h2 { 
+.filters h2 { 
     margin-bottom: 10px;
     font-size: 1.2rem; 
     color: #333; 
 }
 
-#filters label { 
+.filters label { 
     display: block; 
     padding-left: 300px;
     padding-right: 300px;
@@ -357,7 +357,7 @@ form input, form button {
 
 #price-label { margin: 0 auto 10px; font-weight: bold; color: #494848; }
 
-#filters input[type="range"], #filters select, #filters button { 
+.filters input[type="range"], .filters select, .filters button { 
     width: 100%; 
     padding: 8px; 
     margin-bottom: 10px; 
@@ -375,7 +375,7 @@ form input, form button {
     margin-bottom: 10px; 
 }
 
-/*zminejszenie pól wyboru roku w filtrach*/
-#year-range-container select { 
+/*zminejszenie pól wyboru roku  i sortowania w filtrach*/
+#year-range-container select, #sorting-select { 
     width: 48%; 
 }
