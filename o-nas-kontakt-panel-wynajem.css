@@ -263,8 +263,14 @@ form input, form button {
 
 .carousel { 
     position: relative; 
-    max-width: 100%; 
+    /*max-width: 100%; */
     margin: auto; 
+}
+
+.carousel img {
+    width: 520px;
+    height: 350px; /* Ustalona wysokość obrazów */
+    object-fit: cover; /* Dopasowanie obrazu, aby pokrywał całą powierzchnię, przycięcie nadmiaru */
 }
 
 .slide { 
@@ -302,7 +308,7 @@ form input, form button {
 }
 
 .prev:hover, .next:hover { 
-    background-color: rgba(0, 0, 0, 0.8); 
+    background-color: rgba(0, 0, 0, 0.7); 
 }
 
 .accordion { 
@@ -316,11 +322,12 @@ form input, form button {
     border: solid; 
     border-width: 1px; 
     outline: none; 
-    transition: 0.4s; 
+    transition: background-color 0.4s, transform 0.4s ease;  
 }
 
-.accordion.active, .accordion:hover { 
-    background-color: #ccc; 
+.accordion:hover {
+    background-color: #ccc;
+    transform: scale(1.05); 
 }
 
 .panel { 
@@ -386,7 +393,7 @@ form input, form button {
 
 #filters input[type="range"], #filters select, #filters button { width: 100%; padding: 8px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 5px; font-size: 0.9rem; color: #555; }
 
-#filters button { background-color: #007bff; color: #fff; border: none; cursor: pointer; transition: background-color 0.3s; }
+#filters button { background-color: #007bff; color: #fff; border: none; cursor: pointer; transition: background-color 0.4s; }
 
 #filters button:hover { background-color: #0056b3; }
 

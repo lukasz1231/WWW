@@ -16,10 +16,10 @@ function displayOffers(offers) {
             <input type="text" id="type-${index}" name="type" value="${offer.type}" required>
 
             <label for="price-${index}">Cena (zł/miesiąc):</label>
-            <input type="number" id="price-${index}" name="price" value="${offer.price}" required>
+            <input type="text" id="price-${index}" name="price" value="${offer.price}" required>
 
             <label for="year-${index}">Rok produkcji:</label>
-            <input type="number" id="year-${index}" name="year" value="${offer.year}" required>
+            <input type="text" id="year-${index}" name="year" value="${offer.year}" required>
 
             <label for="vin-${index}">VIN:</label>
             <input type="text" id="vin-${index}" name="vin" value="${offer.vin}" required>
