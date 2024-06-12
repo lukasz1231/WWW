@@ -150,68 +150,6 @@ footer p {
     }
 }
 
-.dark-mode-toggle {
-    background-color: transparent;
-    color: #fff;
-    border: 2px solid #fff;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
-}
-
-.dark-mode-toggle:hover {
-    background-color: #fff;
-    color: #222;
-}
-
-.dark-mode-toggle::before {
-    content: "\2600"; 
-    font-size: 10px;
-    margin-right: 10px;
-}
-
-.dark-mode .dark-mode-toggle {
-    border-color: #fff;
-    color: #fff;
-}
-
-.dark-mode .dark-mode-toggle:hover {
-    background-color: #fff;
-    color: #222;
-}
-
-.dark-mode .dark-mode-toggle::before {
-    content: "\1F319"; 
-    margin-right: 5px;
-}
-
-.dark-mode {
-    background-color: #222; 
-    color: #fff; 
-}
-
-.dark-mode header {
-    background-color: #333; 
-}
-
-.dark-mode button {
-    background-color: #333; 
-    color: #fff; 
-}
-
-.dark-mode footer {
-    background-color: #333;
-}
-.dark-mode body,
-.dark-mode #formularz-kontaktowy label,
-.dark-mode #formularz-kontaktowy input,
-.dark-mode #formularz-kontaktowy textarea,
-.dark-mode #info-kontakt p,
-.dark-mode #info-kontakt h2,
-.dark-mode #formularz-kontaktowy h2,
-.dark-mode #godziny-pracy {
-    color: #fff;
-}
 
 #info-kontakt h2,
 #formularz-kontaktowy h2 {
@@ -268,4 +206,46 @@ footer p {
     font-size: 14px;
     margin-top: 10px;
     color: #666;
+}
+
+
+/*panel administratora*/
+.filters, .add-trailer, .trailers {
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+form label {
+    font-weight: bold;
+}
+
+form input, form button {
+    padding: 10px;
+    font-size: 16px;
+}
+
+.trailer {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    gap: 20px;
+}
+
+.trailer img {
+    height: 100px;
+}
+
+.trailer-details {
+    flex-grow: 1;
+}
+
+.trailer-actions {
+    display: flex;
+    gap: 10px;
 }
