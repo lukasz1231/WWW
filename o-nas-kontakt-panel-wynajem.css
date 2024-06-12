@@ -1,0 +1,397 @@
+body {
+    display: flex;
+    flex-direction: column;/* byc moze do wywalenia */
+    font-family: 'Arial', sans-serif;
+    color: #000;
+    background: #fff;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    min-height: 100vh;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 20px 0;
+    position: sticky;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+header .logo {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 0;
+}
+
+header .logo img {
+    height: 60px;
+}
+
+header nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 10px;
+    display: flex;
+    gap: 20px;
+}
+
+header nav ul li {
+    display: inline;
+}
+
+header nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+header nav ul li a:hover {
+    background-color: #333;
+    color: #ddd;
+    border-radius: 5px;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1em; 
+    padding-bottom: 109px; 
+    min-height: calc(100vh - 53px - 81px); 
+    text-align: center;
+}
+
+main .tresc {
+    max-width: 800px;
+}
+
+main .tresc .nazwa-firmy h1 {
+    font-family: 'Trebuchet MS', sans-serif;
+    font-size: 48px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+main .tresc .opis p {
+    font-size: 18px;
+    margin: 10px 0;
+    line-height: 1.6;
+}
+
+footer {
+    background-color: rgba(0, 0, 0, 0.8); 
+    color: white; 
+    text-align: center; 
+    padding: 10px 0;
+    /*border-top: 300px solid transparent;*/ 
+    width: 100%;
+    bottom: 0;
+    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+}
+
+footer p {
+    font-size: 14px;
+    margin: 0;
+}
+
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .logo {
+        position: static;
+        margin-bottom: 10px;
+    }
+
+    nav ul {
+        flex-direction: row;
+        gap: 10px;
+    }
+
+    .nazwa-firmy h1 {
+        font-size: 36px;
+    }
+
+    .opis p {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo img {
+        height: 30px;
+    }
+
+    nav ul {
+        gap: 5px;
+    }
+
+    nav ul li a {
+        padding: 5px 10px;
+    }
+
+    .nazwa-firmy h1 {
+        font-size: 28px;
+    }
+
+    .opis p {
+        font-size: 14px;
+    }
+}
+
+/* kontakt */
+#info-kontakt h2,
+#formularz-kontaktowy h2 {
+    font-size: 28px;
+    margin-bottom: 10px;
+    color: #222;
+}
+
+#info-kontakt p,
+#formularz-kontaktowy label {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #000000;
+}
+
+#formularz-kontaktowy form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#formularz-kontaktowy input,
+#formularz-kontaktowy textarea {
+    margin-bottom: 20px;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: calc(100% - 30px);
+}
+
+#tresc-formularza {
+    display: none;
+    margin-top: 10px;
+}
+
+#formularz-kontaktowy button {
+    padding: 12px 25px;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+#formularz-kontaktowy button:hover {
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+#godziny-pracy {
+    text-align: center;
+    font-family: 'Lato', sans-serif;
+    font-size: 14px;
+    margin-top: 10px;
+    color: #666;
+}
+
+
+/*panel administratora*/
+.filters, .add-trailer, .trailers {
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+form label {
+    font-weight: bold;
+}
+
+form input, form button {
+    padding: 10px;
+    font-size: 16px;
+}
+
+.trailer {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    gap: 20px;
+}
+
+.trailer img {
+    height: 100px;
+}
+
+.trailer-details {
+    flex-grow: 1;
+}
+
+.trailer-actions {
+    display: flex;
+    gap: 10px;
+}
+
+/* wynajem */
+.offer {
+    margin: 1em auto; 
+    max-width: 600px; 
+    border: 1px solid #ddd; 
+    padding: 1em; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+}
+
+.carousel { 
+    position: relative; 
+    max-width: 100%; 
+    margin: auto; 
+}
+
+.slide { 
+    display: none; 
+    width: 100%; 
+}
+
+.active { 
+    display: block; 
+}
+
+.prev, .next { 
+    cursor: pointer; 
+    position: absolute; 
+    top: 50%; 
+    transform: translateY(-50%); 
+    width: auto; 
+    padding: 16px; 
+    font-weight: bold; 
+    font-size: 18px; 
+    user-select: none; 
+    background: rgba(0, 0, 0, 0.5); 
+    border: none; 
+    color: white; 
+}
+
+.prev { 
+    left: 0; 
+    border-radius: 3px 0 0 3px; 
+}
+
+.next { 
+    right: 0; 
+    border-radius: 0 3px 3px 0; 
+}
+
+.prev:hover, .next:hover { 
+    background-color: rgba(0, 0, 0, 0.8); 
+}
+
+.accordion { 
+    font-family: Arial, Helvetica; 
+    font-weight: bold; 
+    color: #000000; 
+    cursor: pointer; 
+    padding: 10px; 
+    width: 100%; 
+    text-align: center; 
+    border: solid; 
+    border-width: 1px; 
+    outline: none; 
+    transition: 0.4s; 
+}
+
+.accordion.active, .accordion:hover { 
+    background-color: #ccc; 
+}
+
+.panel { 
+    padding: 0 18px; 
+    display: none; 
+    background-color: white; 
+    overflow: hidden; 
+}
+
+.cena { 
+    font-family: Franklin Gothic Medium, Arial; 
+    font-style: italic; 
+    font-weight: bold; 
+}
+
+.email-form { 
+    margin-top: 1em; 
+    padding: 1em; 
+    border-top: 1px solid #ddd; 
+    text-align: left; 
+}
+
+.email-form h4 { margin-bottom: 30px; }
+
+.email-form label { display: block; margin-bottom: 0.5em; font-weight: bold; }
+
+.email-form input, .email-form textarea { width: calc(100% - 20px); padding: 0.5em; margin: 0 auto 1em; border: 1px solid #ddd; border-radius: 3px; }
+
+.email-form button[type="submit"] { padding: 0.5em 1em; background-color: #007bff; color: white; border: none; border-radius: 3px; cursor: pointer; }
+
+.email-form button:hover { background-color: #0056b3; }
+
+.email-form .accordion { font-family: Arial, Helvetica; font-weight: bold; color: #000000; cursor: pointer; padding: 10px; width: 100%; text-align: center; border: solid; border-width: 1px; outline: none; transition: 0.4s; margin-bottom: 20px; }
+
+.email-form .accordion.active, .email-form .accordion:hover { background-color: #ccc; }
+
+.email-form .panel { padding: 0 18px; display: none; background-color: white; overflow: hidden; }
+
+#filters { 
+    padding: 15px;
+    padding-left: 300px;
+    padding-right: 300px;
+    border-radius: 8px; 
+    background-color: #f8f9fa; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+    text-align: center; 
+}
+
+#filters h2 { margin-bottom: 10px; font-size: 1.2rem; color: #333; }
+
+#filters label { 
+    display: block; 
+    padding-left: 300px;
+    padding-right: 300px;
+    margin-bottom: 5px; 
+    font-weight: bold; 
+    color: #000000; 
+}
+
+#price-range { margin-left: -10px; }
+
+#price-label { margin: 0 auto 10px; font-weight: bold; color: #494848; }
+
+#filters input[type="range"], #filters select, #filters button { width: 100%; padding: 8px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 5px; font-size: 0.9rem; color: #555; }
+
+#filters button { background-color: #007bff; color: #fff; border: none; cursor: pointer; transition: background-color 0.3s; }
+
+#filters button:hover { background-color: #0056b3; }
+
+#year-range-container { display: flex; flex-direction: column; align-items: center; margin-bottom: 10px; }
+
+#year-range-container label { margin-bottom: 5px; font-weight: bold; color: #000000; }
+
+#year-range-container select { width: 48%; }
