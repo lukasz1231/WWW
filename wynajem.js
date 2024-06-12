@@ -132,7 +132,7 @@ function loadOffers() {
                 <p><strong>VIN:</strong> ${offer.vin}</p>
                 <p><strong>Typ naczepy:</strong> ${offer.type}</p>
             </div>
-            <div class="email-form">
+            <div id="formularz-kontaktowy">
                 <button class="accordion">Skontaktuj się z nami i wynajmij naczepę już dziś:</button>
                 <div class="panel">
                      <form action="mailto:pbtrans@gmail.com" method="post" enctype="text/plain">

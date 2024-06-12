@@ -9,11 +9,8 @@ na sam koniec:
 
 u nich zwracal uwage na:
 JSon server
-do kazdego zdjecia dodac alt "opis zdjecia" - w javascripcie w dodawaniu ogloszenia automatycznie ustawic alt kazdego dodanego zdjecia na tytul ogloszenia
 dodac sortowanie - wszystkie elementy wypisane tylko w kolejnosci po cenie
-dodać animacje (np. przechodzenia z białego trybu na ciemny)
-walidacja m.in vin
-animacje w miejscu rozwijania opisu i przy przechodzeniu pomiędzy zdjęciami
+
 ---------------------------------------------------------------------
 WYKONANA ROBOTA:
 
