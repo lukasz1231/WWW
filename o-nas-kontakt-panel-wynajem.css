@@ -195,7 +195,7 @@ footer p {
     border-radius: 4px;
     cursor: pointer;
     font-size: 16px;
-    transition: background-color 0.3s;
+    transition: transform 0.4s background-color 0.3s;
 }
 
 #formularz-kontaktowy button:hover {
@@ -286,7 +286,6 @@ form input, form button {
     cursor: pointer; 
     position: absolute; 
     top: 50%; 
-    transform: translateY(-50%); 
     width: auto; 
     padding: 16px; 
     font-weight: bold; 
@@ -295,6 +294,7 @@ form input, form button {
     background: rgba(0, 0, 0, 0.5); 
     border: none; 
     color: white; 
+    transition: transform 0.4s ease;
 }
 
 .prev { 
@@ -309,6 +309,7 @@ form input, form button {
 
 .prev:hover, .next:hover { 
     background-color: rgba(0, 0, 0, 0.7); 
+    transform: scale(0.92);
 }
 
 .accordion { 
