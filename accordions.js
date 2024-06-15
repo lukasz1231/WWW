@@ -1,6 +1,6 @@
-function initializeAccordions() {
-const accordions = document.querySelectorAll('.accordion');
-    accordions.forEach(accordion => {
+function inicjalizacjaAkordeonow() {
+const akordeony = document.querySelectorAll('.accordion');
+    akordeony.forEach(accordion => {
         accordion.addEventListener('click', function() {
             this.classList.toggle('active');
             const panel = this.nextElementSibling;
@@ -12,4 +12,4 @@ const accordions = document.querySelectorAll('.accordion');
         });
     });
 }
-initializeAccordions()
+inicjalizacjaAkordeonow()
