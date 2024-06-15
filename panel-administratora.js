@@ -1,14 +1,14 @@
 // Funkcja wyświetlająca oferty
 function wyswietlOferty(offers) {
-    const offersList = document.getElementById('offers-list');
-    offersList.innerHTML = '';
+    const listaOfert = document.getElementById('offers-list');
+    listaOfert.innerHTML = '';
 
     offers.forEach((offer, index) => {
-        const offerElement = document.createElement('div');
-        offerElement.classList.add('offer');
+        const ofertaElement = document.createElement('div');
+        ofertaElement.classList.add('offer');
 
-        const editForm = document.createElement('form');
-        editForm.innerHTML = `
+        const formularzEdycji = document.createElement('form');
+        formularzEdycji.innerHTML = `
             <label for="brand-${index}">Marka:</label>
             <input type="text" id="brand-${index}" name="brand" value="${offer.brand}" required>
 
@@ -30,38 +30,38 @@ function wyswietlOferty(offers) {
             <button type="button" onclick="edycjaOferty(${index})">Zapisz zmiany</button>
             <button type="button" onclick="usunOferte(${index})">Usuń ofertę</button>
         `;
-        offerElement.appendChild(editForm);
+        ofertaElement.appendChild(formularzEdycji);
 
-        offersList.appendChild(offerElement);
+        listaOfert.appendChild(ofertaElement);
     });
 }
 
 // Funkcja zapisująca zmiany w ofercie
 function edycjaOferty(index) {
-    const brand = document.getElementById(`brand-${index}`).value;
-    const type = document.getElementById(`type-${index}`).value;
-    const price = document.getElementById(`price-${index}`).value;
-    const year = document.getElementById(`year-${index}`).value;
+    const marka = document.getElementById(`brand-${index}`).value;
+    const typ = document.getElementById(`type-${index}`).value;
+    const cena = document.getElementById(`price-${index}`).value;
+    const rok = document.getElementById(`year-${index}`).value;
     const vin = document.getElementById(`vin-${index}`).value;
-    const images = document.getElementById(`images-${index}`).value.split(',');
+    const zdjecia = document.getElementById(`images-${index}`).value.split(',');
 
     // Modyfikacja oferty
     const edytowanaOferta = {
-        brand,
-        type,
-        price,
-        year,
+        brand: marka,
+        type: typ,
+        price: cena,
+        year: rok,
         vin,
-        images
+        images: zdjecia
     };
 
     // Pobranie ofert z localStorage
-    let offers = JSON.parse(localStorage.getItem('offers')) || [];
-    offers[index] = edytowanaOferta;
-    localStorage.setItem('offers', JSON.stringify(offers));
+    let oferty = JSON.parse(localStorage.getItem('offers')) || [];
+    oferty[index] = edytowanaOferta;
+    localStorage.setItem('offers', JSON.stringify(oferty));
 
     // Ponowne wyświetlenie ofert
-    wyswietlOferty(offers);
+    wyswietlOferty(oferty);
 
     // Powiadomienie użytkownika o zapisaniu zmian
     alert('Zmiany zostały zapisane.');
@@ -70,12 +70,12 @@ function edycjaOferty(index) {
 // Funkcja usuwająca ofertę
 function usunOferte(index) {
     // Pobranie ofert z localStorage
-    let offers = JSON.parse(localStorage.getItem('offers')) || [];
-    offers.splice(index, 1);
-    localStorage.setItem('offers', JSON.stringify(offers));
+    let Oferty = JSON.parse(localStorage.getItem('offers')) || [];
+    Oferty.splice(index, 1);
+    localStorage.setItem('offers', JSON.stringify(Oferty));
 
     // Ponowne wyświetlenie ofert
-    wyswietlOferty(offers);
+    wyswietlOferty(Oferty);
 
     // Powiadomienie użytkownika o usunięciu oferty
     alert('Oferta została usunięta.');
@@ -83,9 +83,9 @@ function usunOferte(index) {
 
 // Pobranie ofert z localStorage i wyświetlenie ich przy załadowaniu strony
 document.addEventListener('DOMContentLoaded', function() {
-    const offers = JSON.parse(localStorage.getItem('offers')) || [];
-    if (offers.length > 0) {
-        wyswietlOferty(offers);
+    const Oferty = JSON.parse(localStorage.getItem('offers')) || [];
+    if (Oferty.length > 0) {
+        wyswietlOferty(Oferty);
     }
 });
 
@@ -94,27 +94,27 @@ document.getElementById('add-offer-form').addEventListener('submit', function(ev
     event.preventDefault();
 
     
-    const brand = document.getElementById('brand').value;
-    const type = document.getElementById('type').value;
-    const price = document.getElementById('price').value;
-    const year = document.getElementById('year').value;
+    const marka = document.getElementById('brand').value;
+    const typ = document.getElementById('type').value;
+    const cena = document.getElementById('price').value;
+    const rok = document.getElementById('year').value;
     const vin = document.getElementById('vin').value;
-    const images = document.getElementById('images').value.split(',');
+    const zdjecia = document.getElementById('images').value.split(',');
 
     
     const nowaOferta = {
-        brand,
-        type,
-        price,
-        year,
+        brand: marka,
+        type: typ,
+        price: cena,
+        year: rok,
         vin,
-        images
+        images: zdjecia
     };
 
     
-    let offers = JSON.parse(localStorage.getItem('offers')) || [];
-    offers.push(nowaOferta);
-    localStorage.setItem('offers', JSON.stringify(offers));
+    let oferty = JSON.parse(localStorage.getItem('offers')) || [];
+    oferty.push(nowaOferta);
+    localStorage.setItem('offers', JSON.stringify(oferty));
 
     
     document.getElementById('add-offer-form').reset();

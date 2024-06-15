@@ -1,15 +1,15 @@
 document.addEventListener('DOMContentLoaded', function() {
-    initializeFilters();
-    loadOffers();
+    inicjalizowanieFiltrow();
+    zaladujOferty();
 });
 
 // akordeony do opisu i kontaktu 
-function initializeCarousels() {
-    const carousels = document.querySelectorAll('.carousel');
-    carousels.forEach(carousel => {
-        let slides = carousel.getElementsByClassName('slide');
-        if (slides.length > 0) {
-            slides[0].classList.add('active');
+function inicjalizacjaKaruzeli() {
+    const karuzele = document.querySelectorAll('.carousel');
+    karuzele.forEach(carousel => {
+        let slajdy = carousel.getElementsByClassName('slide');
+        if (slajdy.length > 0) {
+            slajdy[0].classList.add('active');
             carousel.dataset.currentSlide = 0;
         }
     });
@@ -17,16 +17,16 @@ function initializeCarousels() {
 
 // zmiana zdjec za pomoca strzalek 
 function zmienZdjecie(n, carouselId) {
-    const carousel = document.getElementById(carouselId);
-    if (carousel) {
-        const slides = carousel.getElementsByClassName('slide');
-        let currentSlide = parseInt(carousel.dataset.currentSlide) || 0;
+    const karuzela = document.getElementById(carouselId);
+    if (karuzela) {
+        const slajdy = karuzela.getElementsByClassName('slide');
+        let aktualnySlajd = parseInt(karuzela.dataset.currentSlide) || 0;
 
-        if (slides.length > 0) {
-            slides[currentSlide].classList.remove('active');
-            currentSlide = (currentSlide + n + slides.length) % slides.length;
-            slides[currentSlide].classList.add('active');
-            carousel.dataset.currentSlide = currentSlide;
+        if (slajdy.length > 0) {
+            slajdy[aktualnySlajd].classList.remove('active');
+            aktualnySlajd = (aktualnySlajd + n + slajdy.length) % slajdy.length;
+            slajdy[aktualnySlajd].classList.add('active');
+            karuzela.dataset.currentSlide = aktualnySlajd;
         }
     }
 }
@@ -35,78 +35,79 @@ function updateCeny(value) {
     document.getElementById('price-label').textContent = `${value} zł`;
 }
 
-function initializeFilters() {
-    const priceRange = document.getElementById('price-range');
-    const brandSelect = document.getElementById('brand-select');
-    const typeSelect = document.getElementById('type-select');
-    const yearFromSelect = document.getElementById('year-from-select');
-    const yearToSelect = document.getElementById('year-to-select');
-    const sortingSelect = document.getElementById('sorting-select');
+function inicjalizowanieFiltrow() {
+    const przedzialCeny = document.getElementById('price-range');
+    const wyborMarki = document.getElementById('brand-select');
+    const wyborTypu = document.getElementById('type-select');
+    const lataOdWybor = document.getElementById('year-from-select');
+    const lataDoWybor = document.getElementById('year-to-select');
+    const zapisOpcjiSortowania = document.getElementById('sorting-select');
 
-    if (priceRange && brandSelect && typeSelect && yearFromSelect && yearToSelect) {
-        priceRange.addEventListener('input', () => {
-            updateCeny(priceRange.value);
+    if (przedzialCeny && wyborMarki && wyborTypu && lataOdWybor && lataDoWybor) {
+        przedzialCeny.addEventListener('input', () => {
+            updateCeny(przedzialCeny.value);
             filterOffers();
         });
 
-        brandSelect.addEventListener('change', filterOffers);
-        typeSelect.addEventListener('change', filterOffers);
-        yearFromSelect.addEventListener('change', filterOffers);
-        yearToSelect.addEventListener('change', filterOffers);
-        sortingSelect.addEventListener('change', () => {
-            saveSortOption();
-            sortOffers();
+        wyborMarki.addEventListener('change', filterOffers);
+        wyborTypu.addEventListener('change', filterOffers);
+        lataOdWybor.addEventListener('change', filterOffers);
+        lataDoWybor.addEventListener('change', filterOffers);
+        zapisOpcjiSortowania.addEventListener('change', () => {
+            zapiszOpcjeSortowania();
+            sortowanieOfert();
         });
     }
 
-    loadSortOption(); // Przywróć stan sortowania
+    zaladujOpcjeSortowania(); // Przywróć stan sortowania
     filterOffers();
 }
 
-function saveSortOption() {
-    const sortOption = document.getElementById('sorting-select').value;
-    localStorage.setItem('sortOption', sortOption);
+function zapiszOpcjeSortowania() {
+    const opcjaSortowania = document.getElementById('sorting-select').value;
+    localStorage.setItem('sortOption', opcjaSortowania);
 }
 
-function loadSortOption() {
-    const sortOption = localStorage.getItem('sortOption');
-    if (sortOption) {
-        document.getElementById('sorting-select').value = sortOption;
+function zaladujOpcjeSortowania() {
+    const opcjaSortowania = localStorage.getItem('sortOption');
+    if (opcjaSortowania) {
+        document.getElementById('sorting-select').value = opcjaSortowania;
     }
 }
 
-function sortOffers() {
-    const sort = document.getElementById('sorting-select').value;
-    const offersContainer = document.getElementById('offers-container');
-    const offers = Array.from(offersContainer.getElementsByClassName('offer'));
+function sortowanieOfert() {
+    const opcjaSortowania = document.getElementById('sorting-select').value;
+    const ofertyKontener = document.getElementById('offers-container');
+    const tablicaOfert = Array.from(ofertyKontener.getElementsByClassName('offer'));
 
-    offers.sort((a, b) => {
-        const priceA = parseInt(a.getAttribute('data-price'));
-        const priceB = parseInt(b.getAttribute('data-price'));
+    tablicaOfert.sort((a, b) => {
+        const cenaA = parseInt(a.getAttribute('data-price'));
+        const cenaB = parseInt(b.getAttribute('data-price'));
 
-        if (sort === 'od najniższej') {
-            return priceA - priceB;
-        } else if (sort === 'od najwyższej') {
-            return priceB - priceA;
+        if (opcjaSortowania === 'od najniższej') {
+            return cenaA - cenaB;
+        } else if (opcjaSortowania === 'od najwyższej') {
+            return cenaB - cenaA;
         } else {
             return 0; // Dowolne sortowanie, brak zmian
         }
     });
 
-    offersContainer.innerHTML = '';
-    offers.forEach(offer => offersContainer.appendChild(offer));
+    ofertyKontener.innerHTML = '';
+    tablicaOfert.forEach(offer => ofertyKontener.appendChild(offer));
 }
 
+// filtrowanie ofert
 function filterOffers() {
     const wybranaCena = parseInt(document.getElementById('price-range').value);
     const wybranaMarka = document.getElementById('brand-select').value;
     const wybranyTyp = document.getElementById('type-select').value;
     const wybranyRokOd = document.getElementById('year-from-select').value;
     const wybranyRokDo = document.getElementById('year-to-select').value;
-    const offersContainer = document.getElementById('offers-container');
-    const offers = offersContainer.querySelectorAll('.offer');
+    const ofertyKontener = document.getElementById('offers-container');
+    const oferty = ofertyKontener.querySelectorAll('.offer');
 
-    offers.forEach(offer => {
+    oferty.forEach(offer => {
         const ofertaCena = parseInt(offer.getAttribute('data-price'));
         const ofertaMarka = offer.getAttribute('data-brand');
         const ofertaTyp = offer.getAttribute('data-type');
@@ -137,32 +138,32 @@ function filterOffers() {
         offer.style.display = pokazOferte ? 'block' : 'none';
     });
 
-    sortOffers(); // Sortuj oferty po filtrowaniu
+    sortowanieOfert(); // Sortuj oferty po filtrowaniu
 }
 
-function loadOffers() {
-    let offers = JSON.parse(localStorage.getItem('offers')) || [];
-    const offersContainer = document.getElementById('offers-container');
+function zaladujOferty() {
+    let oferty = JSON.parse(localStorage.getItem('offers')) || [];
+    const ofertyKontener = document.getElementById('offers-container');
     
-    offersContainer.innerHTML = ''; 
+    ofertyKontener.innerHTML = ''; // wyczyszczenie kontenera, by uniknac duplikacji ofert
 
-    offers.forEach((offer, index) => {
-        const offerElement = document.createElement('div');
-        offerElement.className = 'offer';
-        offerElement.setAttribute('data-price', offer.price);
-        offerElement.setAttribute('data-brand', offer.brand);
-        offerElement.setAttribute('data-type', offer.type);
-        offerElement.setAttribute('data-year', offer.year);
+    oferty.forEach((offer, index) => {
+        const ofertaElement = document.createElement('div');
+        ofertaElement.className = 'offer';
+        ofertaElement.setAttribute('data-price', offer.price);
+        ofertaElement.setAttribute('data-brand', offer.brand);
+        ofertaElement.setAttribute('data-type', offer.type);
+        ofertaElement.setAttribute('data-year', offer.year);
         
-        const carouselId = 'carousel' + index;
+        const karuzelaID = 'carousel' + index;
         
-        offerElement.innerHTML = `
-            <div class="carousel" id="${carouselId}">
-                <button class="prev" onclick="zmienZdjecie(-1, '${carouselId}')">&#10094;</button>
+        ofertaElement.innerHTML = `
+            <div class="carousel" id="${karuzelaID}">
+                <button class="prev" onclick="zmienZdjecie(-1, '${karuzelaID}')">&#10094;</button>
                 ${offer.images && Array.isArray(offer.images) ? offer.images.map((img, idx) => `
                     <img src="${img.trim()}" alt="Oferta ${idx + 1}" class="slide ${idx === 0 ? 'active' : ''}">
                 `).join('') : ''}
-                <button class="next" onclick="zmienZdjecie(1, '${carouselId}')">&#10095;</button>
+                <button class="next" onclick="zmienZdjecie(1, '${karuzelaID}')">&#10095;</button>
             </div>
             <p class="cena">Cena: ${offer.price}zł + VAT/miesiąc</p>
             <button class="accordion">OPIS</button>
@@ -173,7 +174,7 @@ function loadOffers() {
                 <p><strong>Typ naczepy:</strong> ${offer.type}</p>
             </div>
             <div id="formularz-kontaktowy">
-                <button class="accordion">Skontaktuj się z nami i wynajmij naczepę już dziś:</button>
+                <button class="accordion">Skontaktuj się z nami i wynajmij naczepę już dziś!</button>
                 <div class="panel">
                      <form action="mailto:pbtrans@gmail.com" method="post" enctype="text/plain">
                         <label for="email">Twój email:</label>
@@ -188,9 +189,9 @@ function loadOffers() {
             </div>
         `;
         
-        offersContainer.appendChild(offerElement);
+        ofertyKontener.appendChild(ofertaElement);
     });
 
-    initializeCarousels();
-    initializeAccordions(); /* z pliku accordions.js */
+    inicjalizacjaKaruzeli();
+    inicjalizacjaAkordeonow(); /* z pliku accordions.js */
 }
