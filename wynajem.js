@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', function() {
     loadOffers();
 });
 
-// Karuzele do opisu i kontaktu 
+// akordeony do opisu i kontaktu 
 function initializeCarousels() {
     const carousels = document.querySelectorAll('.carousel');
     carousels.forEach(carousel => {
@@ -15,7 +15,8 @@ function initializeCarousels() {
     });
 }
 
-function changeSlide(n, carouselId) {
+// zmiana zdjec za pomoca strzalek 
+function zmienZdjecie(n, carouselId) {
     const carousel = document.getElementById(carouselId);
     if (carousel) {
         const slides = carousel.getElementsByClassName('slide');
@@ -30,7 +31,7 @@ function changeSlide(n, carouselId) {
     }
 }
 
-function updatePriceLabel(value) {
+function updateCeny(value) {
     document.getElementById('price-label').textContent = `${value} zł`;
 }
 
@@ -44,7 +45,7 @@ function initializeFilters() {
 
     if (priceRange && brandSelect && typeSelect && yearFromSelect && yearToSelect) {
         priceRange.addEventListener('input', () => {
-            updatePriceLabel(priceRange.value);
+            updateCeny(priceRange.value);
             filterOffers();
         });
 
@@ -97,43 +98,43 @@ function sortOffers() {
 }
 
 function filterOffers() {
-    const selectedPrice = parseInt(document.getElementById('price-range').value);
-    const selectedBrand = document.getElementById('brand-select').value;
-    const selectedType = document.getElementById('type-select').value;
-    const selectedYearFrom = document.getElementById('year-from-select').value;
-    const selectedYearTo = document.getElementById('year-to-select').value;
+    const wybranaCena = parseInt(document.getElementById('price-range').value);
+    const wybranaMarka = document.getElementById('brand-select').value;
+    const wybranyTyp = document.getElementById('type-select').value;
+    const wybranyRokOd = document.getElementById('year-from-select').value;
+    const wybranyRokDo = document.getElementById('year-to-select').value;
     const offersContainer = document.getElementById('offers-container');
     const offers = offersContainer.querySelectorAll('.offer');
 
     offers.forEach(offer => {
-        const offerPrice = parseInt(offer.getAttribute('data-price'));
-        const offerBrand = offer.getAttribute('data-brand');
-        const offerType = offer.getAttribute('data-type');
-        const offerYear = parseInt(offer.getAttribute('data-year'));
+        const ofertaCena = parseInt(offer.getAttribute('data-price'));
+        const ofertaMarka = offer.getAttribute('data-brand');
+        const ofertaTyp = offer.getAttribute('data-type');
+        const ofertaRok = parseInt(offer.getAttribute('data-year'));
 
-        let showOffer = true;
+        let pokazOferte = true;
 
-        if (offerPrice > selectedPrice) {
-            showOffer = false;
+        if (ofertaCena > wybranaCena) {
+            pokazOferte = false;
         }
 
-        if (selectedBrand !== 'all' && offerBrand !== selectedBrand) {
-            showOffer = false;
+        if (wybranaMarka !== 'all' && ofertaMarka !== wybranaMarka) {
+            pokazOferte = false;
         }
 
-        if (selectedType !== 'all' && offerType !== selectedType) {
-            showOffer = false;
+        if (wybranyTyp !== 'all' && ofertaTyp !== wybranyTyp) {
+            pokazOferte = false;
         }
 
-        if (selectedYearFrom !== 'all' && offerYear < parseInt(selectedYearFrom)) {
-            showOffer = false;
+        if (wybranyRokOd !== 'all' && ofertaRok < parseInt(wybranyRokOd)) {
+            pokazOferte = false;
         }
 
-        if (selectedYearTo !== 'all' && offerYear > parseInt(selectedYearTo)) {
-            showOffer = false;
+        if (wybranyRokDo !== 'all' && ofertaRok > parseInt(wybranyRokDo)) {
+            pokazOferte = false;
         }
 
-        offer.style.display = showOffer ? 'block' : 'none';
+        offer.style.display = pokazOferte ? 'block' : 'none';
     });
 
     sortOffers(); // Sortuj oferty po filtrowaniu
@@ -157,11 +158,11 @@ function loadOffers() {
         
         offerElement.innerHTML = `
             <div class="carousel" id="${carouselId}">
-                <button class="prev" onclick="changeSlide(-1, '${carouselId}')">&#10094;</button>
+                <button class="prev" onclick="zmienZdjecie(-1, '${carouselId}')">&#10094;</button>
                 ${offer.images && Array.isArray(offer.images) ? offer.images.map((img, idx) => `
                     <img src="${img.trim()}" alt="Oferta ${idx + 1}" class="slide ${idx === 0 ? 'active' : ''}">
                 `).join('') : ''}
-                <button class="next" onclick="changeSlide(1, '${carouselId}')">&#10095;</button>
+                <button class="next" onclick="zmienZdjecie(1, '${carouselId}')">&#10095;</button>
             </div>
             <p class="cena">Cena: ${offer.price}zł + VAT/miesiąc</p>
             <button class="accordion">OPIS</button>
