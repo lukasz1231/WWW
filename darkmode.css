@@ -78,7 +78,8 @@
     background-color: #333;
 }
 .dark-mode #formularz-kontaktowy button{
-    background-color: #111;
+    background-color: #333;
+    color: white;
 }
 .dark-mode body,
 .dark-mode #info-kontakt p,

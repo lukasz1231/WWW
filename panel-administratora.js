@@ -1,5 +1,5 @@
 // Funkcja wyświetlająca oferty
-function displayOffers(offers) {
+function wyswietlOferty(offers) {
     const offersList = document.getElementById('offers-list');
     offersList.innerHTML = '';
 
@@ -27,8 +27,8 @@ function displayOffers(offers) {
             <label for="images-${index}">Zdjęcia (URL, oddzielone przecinkami bez spacji):</label>
             <input type="text" id="images-${index}" name="images" value="${offer.images.join(',')}" required>
 
-            <button type="button" onclick="editOffer(${index})">Zapisz zmiany</button>
-            <button type="button" onclick="deleteOffer(${index})">Usuń ofertę</button>
+            <button type="button" onclick="edycjaOferty(${index})">Zapisz zmiany</button>
+            <button type="button" onclick="usunOferte(${index})">Usuń ofertę</button>
         `;
         offerElement.appendChild(editForm);
 
@@ -37,7 +37,7 @@ function displayOffers(offers) {
 }
 
 // Funkcja zapisująca zmiany w ofercie
-function editOffer(index) {
+function edycjaOferty(index) {
     const brand = document.getElementById(`brand-${index}`).value;
     const type = document.getElementById(`type-${index}`).value;
     const price = document.getElementById(`price-${index}`).value;
@@ -46,7 +46,7 @@ function editOffer(index) {
     const images = document.getElementById(`images-${index}`).value.split(',');
 
     // Modyfikacja oferty
-    const editedOffer = {
+    const edytowanaOferta = {
         brand,
         type,
         price,
@@ -57,25 +57,25 @@ function editOffer(index) {
 
     // Pobranie ofert z localStorage
     let offers = JSON.parse(localStorage.getItem('offers')) || [];
-    offers[index] = editedOffer;
+    offers[index] = edytowanaOferta;
     localStorage.setItem('offers', JSON.stringify(offers));
 
     // Ponowne wyświetlenie ofert
-    displayOffers(offers);
+    wyswietlOferty(offers);
 
     // Powiadomienie użytkownika o zapisaniu zmian
     alert('Zmiany zostały zapisane.');
 }
 
 // Funkcja usuwająca ofertę
-function deleteOffer(index) {
+function usunOferte(index) {
     // Pobranie ofert z localStorage
     let offers = JSON.parse(localStorage.getItem('offers')) || [];
     offers.splice(index, 1);
     localStorage.setItem('offers', JSON.stringify(offers));
 
     // Ponowne wyświetlenie ofert
-    displayOffers(offers);
+    wyswietlOferty(offers);
 
     // Powiadomienie użytkownika o usunięciu oferty
     alert('Oferta została usunięta.');
@@ -85,7 +85,7 @@ function deleteOffer(index) {
 document.addEventListener('DOMContentLoaded', function() {
     const offers = JSON.parse(localStorage.getItem('offers')) || [];
     if (offers.length > 0) {
-        displayOffers(offers);
+        wyswietlOferty(offers);
     }
 });
 
@@ -102,7 +102,7 @@ document.getElementById('add-offer-form').addEventListener('submit', function(ev
     const images = document.getElementById('images').value.split(',');
 
     
-    const newOffer = {
+    const nowaOferta = {
         brand,
         type,
         price,
@@ -113,7 +113,7 @@ document.getElementById('add-offer-form').addEventListener('submit', function(ev
 
     
     let offers = JSON.parse(localStorage.getItem('offers')) || [];
-    offers.push(newOffer);
+    offers.push(nowaOferta);
     localStorage.setItem('offers', JSON.stringify(offers));
 
     
