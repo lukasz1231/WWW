@@ -1,5 +1,5 @@
 // Skrypt do zmiany trybu ciemnego
-function toggleDarkMode() {
+function przelaczDarkmode() {
     const body = document.body;
     const header = document.querySelector('header');
     const footer = document.querySelector('footer');
@@ -30,5 +30,5 @@ function toggleDarkMode() {
 // zapisywany jest stan strony
 const darkMode = localStorage.getItem('darkMode');
 if (darkMode === 'enabled') {
-    toggleDarkMode(); 
+    przelaczDarkmode(); 
 }
