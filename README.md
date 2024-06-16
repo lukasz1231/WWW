@@ -1,3 +1,31 @@
+# Wersje do testowania:
+
+- Marka: Wielton
+- Typ: Platforma
+- Cena: X
+- Rok produkcji: X
+- VIN: WBS81CH010CJ01433
+- zdjecia: https://ireland.apollo.olxcdn.com/v1/files/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmbiI6IjV0dXY3ZTYza2I2cC1PVE9NT1RPUEwiLCJ3IjpbeyJmbiI6IndnNGducXA2eTFmLU9UT01PVE9QTCIsInMiOiIxNiIsImEiOiIwIiwicCI6IjEwLC0xMCJ9XX0.5sRWxYlCLiSLqfi3aMY1zPothZteTHtW70qlW0XAd1Q/image;s=1024x0;q=100,https://ireland.apollo.olxcdn.com/v1/files/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmbiI6IjY1dDI5dzQ3cG1vbjEtT1RPTU9UT1BMIiwidyI6W3siZm4iOiJ3ZzRnbnFwNnkxZi1PVE9NT1RPUEwiLCJzIjoiMTYiLCJhIjoiMCIsInAiOiIxMCwtMTAifV19.I25_1Kcfhb3PeuBUIPl4NZK1HTTqPkOSZe8Y2snIFaY/image;s=1024x0;q=80
+
+- Marka: Krone
+- Typ: Chłodnia
+- Cena: X
+- Rok produkcji: X
+- VIN: SKS81CS090CJ01535
+- zdjecia:
+https://ireland.apollo.olxcdn.com/v1/files/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmbiI6Im5saTEwYmVoeWV1YTItT1RPTU9UT1BMIiwidyI6W3siZm4iOiJ3ZzRnbnFwNnkxZi1PVE9NT1RPUEwiLCJzIjoiMTYiLCJhIjoiMCIsInAiOiIxMCwtMTAifV19.2OOHph-R-ghsXoswZIPtEX4t9b8mrWT6ls-wp0-y4zQ/image;s=1024x0;q=100,https://ireland.apollo.olxcdn.com/v1/files/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmbiI6IjE2YjJsdnh2OHJvMTEtT1RPTU9UT1BMIiwidyI6W3siZm4iOiJ3ZzRnbnFwNnkxZi1PVE9NT1RPUEwiLCJzIjoiMTYiLCJhIjoiMCIsInAiOiIxMCwtMTAifV19.jjvq9FHVhEY-lOmrOikfSJvefH7pDlG3mQ0UposCEds/image;s=1024x0;q=100
+
+- Marka: Wielton
+- Typ: Chłodnia
+- Cena: X
+- Rok produkcji: X
+- VIN: WAUZZZ4AZSN107869
+- zdjecia:
+https://ireland.apollo.olxcdn.com/v1/files/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmbiI6Im5mbHA5ajNlano3YTItT1RPTU9UT1BMIiwidyI6W3siZm4iOiJ3ZzRnbnFwNnkxZi1PVE9NT1RPUEwiLCJzIjoiMTYiLCJhIjoiMCIsInAiOiIxMCwtMTAifV19.g26-RKVSlxh8cNIwcx9z3qp0q__Uxr7b2OXuWfbHhAs/image;s=1024x0;q=80,https://ireland.apollo.olxcdn.com/v1/files/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmbiI6Inh3cnN3dzF5bXJwazItT1RPTU9UT1BMIiwidyI6W3siZm4iOiJ3ZzRnbnFwNnkxZi1PVE9NT1RPUEwiLCJzIjoiMTYiLCJhIjoiMCIsInAiOiIxMCwtMTAifV19.Gm-olFBItVT9kp05h_-w7-xIAUOoS9RUJSx9JnKiKx8/image;s=1024x0;q=100
+
+
+
+
 # DO DODANIA:
 na sam koniec:
 - trzeba przejść przez kod i wyczyścić go ze zbędnych rzeczy oraz pozmieniać tak zeby nie wygladalo na chatgpt
