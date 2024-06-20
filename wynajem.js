@@ -46,17 +46,17 @@ function inicjalizowanieFiltrow() {
     if (przedzialCeny && wyborMarki && wyborTypu && lataOdWybor && lataDoWybor) {
         przedzialCeny.addEventListener('input', () => {
             updateCeny(przedzialCeny.value);
-            filterOffers();
+            filtrowanieOfert();
         });
 
-        wyborMarki.addEventListener('change', filterOffers);
-        wyborTypu.addEventListener('change', filterOffers);
-        lataOdWybor.addEventListener('change', filterOffers);
-        lataDoWybor.addEventListener('change', filterOffers);
+        wyborMarki.addEventListener('change', filtrowanieOfert);
+        wyborTypu.addEventListener('change', filtrowanieOfert);
+        lataOdWybor.addEventListener('change', filtrowanieOfert);
+        lataDoWybor.addEventListener('change', filtrowanieOfert);
         zapisOpcjiSortowania.addEventListener('change', sortowanieOfert);
     }
 
-    filterOffers();
+    filtrowanieOfert();
 }
 
 
@@ -83,7 +83,7 @@ function sortowanieOfert() {
 }
 
 // filtrowanie ofert
-function filterOffers() {
+function filtrowanieOfert() {
     const wybranaCena = parseInt(document.getElementById('price-range').value);
     const wybranaMarka = document.getElementById('brand-select').value;
     const wybranyTyp = document.getElementById('type-select').value;
