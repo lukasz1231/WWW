@@ -163,11 +163,11 @@ function zaladujOferty() {
                 <div class="panel">
                      <form action="mailto:pbtrans@gmail.com" method="post" enctype="text/plain">
                         <label for="email">Twój email:</label>
-                        <input type="email" id="email" name="email" required>
+                        <input type="email" id="email" name="email" placeholder = "Email" required>
                         <label for="temat">Temat:</label>
-                        <input type="text" id="temat" name="temat">
+                        <input type="text" id="temat" name="temat" placeholder = "Temat">
                         <label for="message">Treść wiadomości:</label>
-                        <textarea id="message" name="message" rows="4" required></textarea>
+                        <textarea id="message" name="message" rows="4" placeholder = "Wiadomosc" required></textarea>
                         <button type="submit">Wyślij</button>
                     </form>
                 </div>
