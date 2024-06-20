@@ -53,27 +53,12 @@ function inicjalizowanieFiltrow() {
         wyborTypu.addEventListener('change', filterOffers);
         lataOdWybor.addEventListener('change', filterOffers);
         lataDoWybor.addEventListener('change', filterOffers);
-        zapisOpcjiSortowania.addEventListener('change', () => {
-            zapiszOpcjeSortowania();
-            sortowanieOfert();
-        });
+        zapisOpcjiSortowania.addEventListener('change', sortowanieOfert);
     }
 
-    zaladujOpcjeSortowania(); // Przywróć stan sortowania
     filterOffers();
 }
 
-function zapiszOpcjeSortowania() {
-    const opcjaSortowania = document.getElementById('sorting-select').value;
-    localStorage.setItem('sortOption', opcjaSortowania);
-}
-
-function zaladujOpcjeSortowania() {
-    const opcjaSortowania = localStorage.getItem('sortOption');
-    if (opcjaSortowania) {
-        document.getElementById('sorting-select').value = opcjaSortowania;
-    }
-}
 
 function sortowanieOfert() {
     const opcjaSortowania = document.getElementById('sorting-select').value;
